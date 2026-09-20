@@ -138,12 +138,13 @@ Cette roadmap transforme les documents métier existants en une application dép
 - vérifier qu'un seul binding D1 est généré ;
 - appliquer les migrations distantes ;
 - importer les données initiales ;
-- déployer avec `npx wrangler deploy --dry-run`, puis `npx wrangler deploy` ;
+- valider le bundle avec `npx wrangler deploy --dry-run` ;
+- activer et vérifier le déploiement automatique via `.github/workflows/deploy.yml` ;
 - créer l'administrateur ;
 - supprimer `NUXT_BOOTSTRAP_SECRET` et redéployer ;
 - tester le site public, l'administration, les médias et la persistance de session.
 
-**Sortie obtenue :** Worker et D1 de production fonctionnels ; bootstrap supprimé après création de l'administrateur.
+**Sortie obtenue :** Worker et D1 de production fonctionnels ; bootstrap supprimé après création de l'administrateur ; déploiement automatique actif sur `main`.
 
 ## Phase 10 — Stabilisation et évolutions
 

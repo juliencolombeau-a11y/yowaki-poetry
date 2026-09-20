@@ -280,7 +280,7 @@ En production :
 3. appliquer les migrations ;
 4. construire et inspecter `.output/server/wrangler.json` ;
 5. exécuter `npx wrangler deploy --dry-run` ;
-6. déployer ;
+6. pousser sur `main` et vérifier la réussite du workflow GitHub Actions ;
 7. importer les données initiales après migration ;
 8. créer le compte administrateur ;
 9. supprimer le secret de bootstrap et redéployer ;

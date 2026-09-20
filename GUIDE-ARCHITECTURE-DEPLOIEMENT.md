@@ -230,7 +230,7 @@ Tester les autorisations avec trois profils : visiteur non connecté, éditeur e
 
 ### Déploiement automatique avec GitHub Actions
 
-Le workflow `.github/workflows/deploy.yml` se déclenche sur chaque push vers `main` et peut aussi être lancé manuellement depuis l'onglet **Actions** de GitHub. Il effectue le typecheck, le build avec le preset `cloudflare_module`, puis `wrangler deploy`.
+Le workflow `.github/workflows/deploy.yml` se déclenche sur chaque push vers `main` et peut aussi être lancé manuellement depuis l'onglet **Actions** de GitHub. Il installe les dépendances avec `npm ci --legacy-peer-deps`, effectue le typecheck, le build avec le preset `cloudflare_module`, puis `wrangler deploy`.
 
 Créer un environnement GitHub nommé `Production`, puis ajouter :
 
@@ -243,13 +243,14 @@ Créer un environnement GitHub nommé `Production`, puis ajouter :
 
 Le token doit disposer au minimum du droit **Account - Workers Scripts - Edit** ainsi que de la lecture du compte nécessaire à Wrangler. Le modèle de token **Edit Cloudflare Workers** convient généralement. Ne jamais mettre les secrets Cloudinary ou de session dans le dépôt : ils restent configurés dans Cloudflare Production.
 
-Après configuration, un push vers `main` doit créer une exécution `Deploy to Cloudflare Workers` dans GitHub Actions. Le déploiement peut être relancé avec **Run workflow** sans nouveau commit.
+Après configuration, un push vers `main` doit créer une exécution `Deploy to Cloudflare Workers` dans GitHub Actions. Vérifier que les étapes d'installation, de typecheck, de build et de déploiement réussissent. Le déploiement peut être relancé avec **Run workflow** sans nouveau commit.
 
 ### Construire et vérifier
 
 ```powershell
-npm install
+npm install --legacy-peer-deps
 npx nuxt typecheck
+$env:NITRO_PRESET = "cloudflare_module"
 npm run build
 Get-Content .output\server\wrangler.json
 npx wrangler deploy --dry-run
@@ -257,16 +258,22 @@ npx wrangler deploy --dry-run
 
 Le build doit réussir avant toute migration ou tout déploiement. Le fichier Wrangler généré doit être inspecté pour confirmer les bindings et le preset Cloudflare.
 
-### Initialiser la base et déployer
+### Initialiser la base et préparer le premier déploiement
 
 ```powershell
 npx wrangler d1 execute <nom-de-la-base> --remote --file .output/server/db/migrations/0000_initial-schema.sql --yes
-
-Pour les migrations suivantes, utiliser le dossier et la configuration Wrangler générés par le build, ou fournir explicitement le chemin de migration approprié. La commande `d1 migrations apply` lancée depuis la racine cherche par défaut un dossier `migrations` qui n'existe pas dans ce projet.
-npx wrangler deploy
 ```
 
-Si des données initiales existent, effectuer l'import après les migrations et avant les tests fonctionnels complets. Redéployer après toute modification de variable ou de secret : le build peut lire ces valeurs et Cloudflare ne les ajoute pas rétroactivement à une version déjà construite.
+Pour les migrations suivantes, utiliser le dossier et la configuration Wrangler générés par le build, ou fournir explicitement le chemin de migration approprié. La commande `d1 migrations apply` lancée depuis la racine cherche par défaut un dossier `migrations` qui n'existe pas dans ce projet.
+
+Si des données initiales existent, effectuer l'import après les migrations et avant les tests fonctionnels complets. Après le premier déploiement, les mises à jour courantes passent par un push vers `main`. Redéployer après toute modification de variable ou de secret : le build peut lire ces valeurs et Cloudflare ne les ajoute pas rétroactivement à une version déjà construite.
+
+### Contrôle après chaque modification
+
+1. Vérifier que le commit est bien présent sur `origin/main`.
+2. Ouvrir l'onglet **Actions** et contrôler l'exécution `Deploy to Cloudflare Workers`.
+3. En cas d'échec, corriger l'étape signalée avant de considérer la mise en production terminée.
+4. Vérifier ensuite l'URL publique et, si nécessaire, les logs du Worker.
 
 ### Vérifier la production
 
