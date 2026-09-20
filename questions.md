@@ -134,6 +134,26 @@ Réponse : je veux bien une préproduction locale avant déploiement pour tester
 
 Réponse : moi
 
+## État après mise en production
+
+La V1 a été déployée sur Cloudflare Workers et validée avec le catalogue public, l'administration et la base D1. Les décisions suivantes restent ouvertes pour les évolutions :
+
+### 31. Les nouvelles doivent-elles apparaître dans le même catalogue que les poèmes ?
+
+Réponse à décider avant l'évolution `contentType` `news` ou `short-story`.
+
+### 32. Quels champs sont nécessaires pour une nouvelle ?
+
+Proposition à confirmer : titre, résumé, texte long, date, image éventuelle, PDF éventuel, notes publiques et statut brouillon/publié.
+
+### 33. Les nouvelles doivent-elles être publiées immédiatement ou passer par un brouillon ?
+
+Réponse à décider. Le brouillon est recommandé avant d'ajouter des contenus éditoriaux longs.
+
+### 34. Faut-il créer une page publique dédiée aux nouvelles ?
+
+Réponse à décider. Une page dédiée est recommandée si les nouvelles ne doivent pas être mélangées aux poèmes.
+
 ## Décisions proposées par défaut
 
 En l'absence de réponse explicite, la roadmap suppose :
@@ -146,6 +166,5 @@ En l'absence de réponse explicite, la roadmap suppose :
 - Cloudinary pour les images ;
 - téléchargement PDF obligatoire et affichage intégré tenté lorsque compatible ;
 - Nuxt 4, Vuetify, NuxtHub, D1, Drizzle, `nuxt-auth-utils` et Wrangler ;
-- les nouvelles reportées à une évolution `contentType` ultérieure ;
+- les nouvelles reportées à une évolution `contentType` ultérieure, avec validation éditoriale préalable ;
 - aucune suppression automatique de média sans validation de la stratégie de nettoyage.
-

@@ -96,7 +96,7 @@ export default defineNuxtConfig({
 })
 ```
 
-`wrangler.jsonc` doit contenir uniquement les réglages généraux du Worker, par exemple le nom, la date de compatibilité et les flags nécessaires. NuxtHub génère ensuite la configuration de binding D1 dans `.output/server/wrangler.json`.
+La configuration actuelle conserve un seul binding D1 `DB` dans `wrangler.jsonc`, repris par NuxtHub dans `.output/server/wrangler.json`. Le nom du binding doit rester `DB`, car le runtime NuxtHub le recherche explicitement.
 
 ### Incident à ne pas reproduire : binding D1 déclaré deux fois
 
@@ -105,7 +105,7 @@ Le premier déploiement a échoué avec l'erreur `DB assigned to multiple D1 Dat
 1. NuxtHub générait automatiquement le binding `DB` depuis `CLOUDFLARE_D1_DATABASE_ID`.
 2. `wrangler.jsonc` déclarait en plus le même binding dans `d1_databases`.
 
-La règle pour la prochaine application est simple : choisir un seul propriétaire du binding. Avec NuxtHub, ne pas ajouter manuellement `d1_databases` dans `wrangler.jsonc`.
+La règle est simple : ne jamais produire deux bindings vers la même base. Si un binding est déclaré dans `wrangler.jsonc`, il doit être nommé `DB` et le fichier généré doit être inspecté après chaque build Cloudflare.
 
 Avant le premier déploiement, inspecter la configuration générée :
 
@@ -225,7 +225,7 @@ Tester les autorisations avec trois profils : visiteur non connecté, éditeur e
 2. Récupérer son identifiant et le configurer comme `CLOUDFLARE_D1_DATABASE_ID`.
 3. Configurer les variables et secrets dans l'environnement **Production**.
 4. Vérifier que le projet Cloudflare utilise le bon dépôt GitHub et la bonne branche.
-5. Ne pas ajouter de binding D1 manuel si NuxtHub le génère.
+5. vérifier que le binding généré est unique et nommé `DB`.
 
 ### Construire et vérifier
 
@@ -242,7 +242,9 @@ Le build doit réussir avant toute migration ou tout déploiement. Le fichier Wr
 ### Initialiser la base et déployer
 
 ```powershell
-npx wrangler d1 migrations apply <nom-de-la-base> --remote
+npx wrangler d1 execute <nom-de-la-base> --remote --file .output/server/db/migrations/0000_initial-schema.sql --yes
+
+Pour les migrations suivantes, utiliser le dossier et la configuration Wrangler générés par le build, ou fournir explicitement le chemin de migration approprié. La commande `d1 migrations apply` lancée depuis la racine cherche par défaut un dossier `migrations` qui n'existe pas dans ce projet.
 npx wrangler deploy
 ```
 

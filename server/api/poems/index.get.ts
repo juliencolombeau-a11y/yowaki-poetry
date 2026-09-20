@@ -1,4 +1,4 @@
-import { and, asc, count, eq, exists, inArray, like, or } from 'drizzle-orm'
+import { and, asc, count, desc, eq, exists, inArray, like, or } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 
 const pageSize = 24
@@ -10,6 +10,7 @@ export default defineEventHandler(async (event) => {
   const form = typeof query.form === 'string' ? query.form.trim() : ''
   const language = typeof query.language === 'string' ? query.language.trim() : ''
   const calligram = query.calligram === 'true'
+  const sort = typeof query.sort === 'string' ? query.sort : 'date-desc'
   const parsedPage = Number(query.page)
   const page = Number.isInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1
   const offset = (page - 1) * pageSize
@@ -57,7 +58,17 @@ export default defineEventHandler(async (event) => {
       })
       .from(schema.poems)
       .where(where)
-      .orderBy(asc(schema.poems.documentOrder))
+      .orderBy(
+        sort === 'title-asc'
+          ? asc(schema.poems.title)
+          : sort === 'title-desc'
+            ? desc(schema.poems.title)
+            : sort === 'date-asc'
+              ? asc(schema.poems.creationDate)
+              : desc(schema.poems.creationDate),
+        desc(schema.poems.createdAt),
+        asc(schema.poems.documentOrder),
+      )
       .limit(pageSize)
       .offset(offset),
     db.select({ total: count() }).from(schema.poems).where(where),

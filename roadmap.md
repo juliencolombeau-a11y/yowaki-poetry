@@ -1,5 +1,8 @@
 # Roadmap — Yowaki Poetry
 
+> État au 20 septembre 2026 : V1 déployée sur Cloudflare Workers, avec D1 et Cloudinary opérationnels.
+> URL actuelle : `https://yowaki-poetry.yboawhafkuil.workers.dev`
+
 Cette roadmap transforme les documents métier existants en une application déployable. Les phases doivent être réalisées dans l'ordre lorsque la phase suivante dépend du schéma ou des décisions de la précédente.
 
 ## Phase 0 — Cadrage et décisions
@@ -19,7 +22,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 
 **Objectif :** rendre l'import fiable avant de construire l'interface.
 
-- inventorier les 494 textes actuellement détectés dans `poemes.md` et les lignes correspondantes du CSV ;
+- inventorier les 494 textes détectés dans `poemes.md` et les lignes correspondantes du CSV ;
 - détecter les titres manquants, doublons, variantes d'accents et collisions de séries ;
 - utiliser `poemes.md` comme source prioritaire pour l'ordre, les titres et les textes ;
 - repérer les poèmes dont la mise en page est un calligramme ;
@@ -27,7 +30,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - définir le format de rapport d'import ;
 - ajouter les exclusions Git nécessaires pour `.env`, `.data`, `.output` et les fichiers temporaires.
 
-**Sortie attendue :** jeu de données local nettoyé, rapport des anomalies et mapping documenté.
+**Sortie obtenue :** jeu de données local nettoyé, rapports d'audit et de correspondance documentés.
 
 ## Phase 2 — Initialisation technique
 
@@ -39,7 +42,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - préparer les scripts de développement, typecheck, build et export/import ;
 - vérifier le fonctionnement sur `http://localhost:3000` sous Windows.
 
-**Sortie attendue :** application vide qui démarre, se type-checke et se construit.
+**Sortie obtenue :** application Nuxt qui démarre, se type-checke et se construit.
 
 ## Phase 3 — Modèle de données et migrations
 
@@ -52,7 +55,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - générer les migrations Drizzle ;
 - tester les migrations sur une base locale propre et sur une base vide de préproduction.
 
-**Sortie attendue :** schéma versionné, migration initiale reproductible et rapport de comptage.
+**Sortie obtenue :** schéma versionné, migration initiale appliquée en local et sur D1.
 
 ## Phase 4 — Import initial
 
@@ -67,7 +70,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - rendre l'import relançable sans doublons ;
 - exporter un jeu initial compatible D1.
 
-**Sortie attendue :** base locale complète, rapport d'import approuvé et script d'export déterministe.
+**Sortie obtenue :** 494 poèmes importés en local et dans D1, avec export SQL relançable.
 
 ## Phase 5 — Catalogue public
 
@@ -82,7 +85,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - ajouter navigation par caractéristiques ;
 - ajouter SEO de base, états vides, chargement et erreurs.
 
-**Sortie attendue :** un visiteur peut parcourir et retrouver les poèmes sans compte.
+**Sortie obtenue :** catalogue public déployé, avec recherche, filtres, pagination, cartes et fiches.
 
 ## Phase 6 — Authentification et administration
 
@@ -95,7 +98,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - ajouter confirmations, validations et messages d'erreur ;
 - mettre en place le bootstrap du premier administrateur.
 
-**Sortie attendue :** les opérations CRUD fonctionnent pour l'administrateur et sont refusées pour un visiteur.
+**Sortie obtenue :** authentification, création et modification protégées ; suppression de médias opérationnelle.
 
 ## Phase 7 — Images et PDF
 
@@ -109,7 +112,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - afficher le PDF intégré par défaut et conserver un lien de téléchargement public ;
 - traiter proprement l'absence ou l'échec d'un média.
 
-**Sortie attendue :** une fiche peut être enrichie depuis ordinateur ou mobile sans exposer de secret.
+**Sortie obtenue :** upload, remplacement et suppression d'image/PDF, avec secrets conservés côté serveur.
 
 ## Phase 8 — Qualité, sécurité et accessibilité
 
@@ -140,7 +143,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - supprimer `NUXT_BOOTSTRAP_SECRET` et redéployer ;
 - tester le site public, l'administration, les médias et la persistance de session.
 
-**Sortie attendue :** URL de production fonctionnelle et fiche de déploiement renseignée.
+**Sortie obtenue :** Worker et D1 de production fonctionnels ; bootstrap supprimé après création de l'administrateur.
 
 ## Phase 10 — Stabilisation et évolutions
 
@@ -149,11 +152,45 @@ Cette roadmap transforme les documents métier existants en une application dép
 - surveiller erreurs et temps de réponse ;
 - corriger les problèmes éditoriaux issus de l'import ;
 - documenter sauvegarde, migration et retour arrière ;
+- corriger les anomalies éditoriales issues de l'import ;
+- ajouter les tests automatisés manquants et une checklist de non-régression ;
 - ajouter éventuellement des slugs, favoris ou statistiques ;
-- étudier l'intégration des nouvelles et textes PDF comme `contentType` distinct ;
-- étudier une gestion plus fine des médias et des collections.
+- concevoir l'intégration des nouvelles comme `contentType` distinct ;
+- étudier une gestion plus fine des médias et des collections ;
+- préparer les champs spécifiques aux nouvelles : auteur, date, résumé, contenu long, statut de publication ;
+- décider si les nouvelles doivent partager la recherche et les filtres des poèmes ou disposer d'un espace séparé.
 
 **Sortie attendue :** backlog priorisé à partir de l'usage réel, sans élargir la V1 prématurément.
+
+## Backlog d'évolutions post-V1
+
+### Évolution 0 — Confort de consultation
+
+- ajouter des pages pédagogiques sur la technique de poésie ;
+- ajouter un bouton « Voir un poème au hasard » ;
+- proposer un mode sombre.
+
+### Évolution A — Actualités et nouvelles
+
+- ajouter un type de contenu `news` ou `short-story` sans modifier le type `poem` existant ;
+- définir une table ou des champs dédiés pour le titre, le résumé, le corps, la date, l'image et le PDF ;
+- créer une page publique dédiée et un filtre par type de contenu ;
+- ajouter dans l'administration une vue et un formulaire adaptés aux textes longs ;
+- prévoir le statut brouillon/publié avant toute mise en ligne ;
+- importer les sources PDF uniquement après validation éditoriale.
+
+### Évolution B — Référentiels éditoriaux
+
+- permettre de gérer les collections, formes, strophes, métriques, rimes et thèmes depuis une interface dédiée ;
+- conserver la saisie libre actuelle pour ne pas bloquer l'administration ;
+- fusionner ou renommer les valeurs uniquement après confirmation éditoriale.
+
+### Évolution C — Exploitation
+
+- ajouter un domaine personnalisé ;
+- mettre en place une préproduction Cloudflare séparée ;
+- automatiser les tests et le déploiement depuis GitHub ;
+- documenter les sauvegardes D1 et les procédures de retour arrière.
 
 ## Jalons de validation
 
@@ -162,10 +199,10 @@ Cette roadmap transforme les documents métier existants en une application dép
 | J1 — Décisions | `questions.md` renseigné et modèle confirmé |
 | J2 — Données | import local complet et rapport approuvé |
 | J3 — Prototype | recherche, filtres et fiche lisibles |
-| J4 — Administration | CRUD et autorisations testés |
-| J5 — Médias | image et PDF testés sur fichiers valides/invalides |
+| J4 — Administration | CRUD, recherche, pagination et autorisations testés |
+| J5 — Médias | upload, remplacement et suppression implémentés |
 | J6 — Préproduction | migrations, build et dry-run réussis |
-| J7 — Production | parcours public et admin vérifiés, bootstrap supprimé |
+| J7 — Production | URL publique, D1, admin et bootstrap vérifiés |
 
 ## Ordre de priorité en cas de réduction du périmètre
 

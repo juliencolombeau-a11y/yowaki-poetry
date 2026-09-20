@@ -1,4 +1,4 @@
-import { and, asc, count, eq, exists, like, or } from 'drizzle-orm'
+import { and, asc, count, desc, eq, exists, like, or, sql } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 import { requireAdmin } from '../../../utils/auth'
 
@@ -13,14 +13,18 @@ export default defineEventHandler(async (event) => {
   const form = typeof query.form === 'string' ? query.form.trim() : ''
   const language = typeof query.language === 'string' ? query.language.trim() : ''
   const calligram = query.calligram === 'true'
+  const searchScope = query.searchScope === 'title' ? 'title' : 'all'
+  const sort = typeof query.sort === 'string' ? query.sort : ''
   const parsedPage = Number(query.page)
   const page = Number.isInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1
   const filters = [
     search
-      ? or(
-          like(schema.poems.title, `%${search}%`),
-          like(schema.poems.body, `%${search}%`),
-        )
+      ? searchScope === 'title'
+        ? like(schema.poems.title, `%${search}%`)
+        : or(
+            like(schema.poems.title, `%${search}%`),
+            like(schema.poems.body, `%${search}%`),
+          )
       : undefined,
     collection ? eq(schema.poems.collection, collection) : undefined,
     form ? eq(schema.poems.form, form) : undefined,
@@ -39,6 +43,18 @@ export default defineEventHandler(async (event) => {
     calligram ? eq(schema.poems.isCalligram, true) : undefined,
   ].filter(Boolean)
   const where = filters.length > 0 ? and(...filters) : undefined
+  const orderBy = search
+    ? [
+        sql`CASE WHEN ${schema.poems.title} LIKE ${`%${search}%`} THEN 0 ELSE 1 END`,
+        sort === 'title-desc' ? desc(schema.poems.title) : sort === 'title-asc' ? asc(schema.poems.title) : asc(schema.poems.documentOrder),
+      ]
+    : sort === 'title-desc'
+      ? [desc(schema.poems.title)]
+      : sort === 'title-asc'
+        ? [asc(schema.poems.title)]
+        : sort === 'order-desc'
+          ? [desc(schema.poems.documentOrder)]
+          : [asc(schema.poems.documentOrder)]
 
   const [data, countRows] = await Promise.all([
     db
@@ -53,7 +69,7 @@ export default defineEventHandler(async (event) => {
       })
       .from(schema.poems)
       .where(where)
-      .orderBy(asc(schema.poems.documentOrder))
+      .orderBy(...orderBy)
       .limit(pageSize)
       .offset((page - 1) * pageSize),
     db.select({ total: count() }).from(schema.poems).where(where),

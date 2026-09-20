@@ -37,6 +37,7 @@ const collection = ref('')
 const form = ref('')
 const language = ref('')
 const calligram = ref(false)
+const sort = ref('date-desc')
 const page = ref(1)
 
 const { data: references } = await useFetch<ReferencesResponse>('/api/poems/references')
@@ -46,6 +47,7 @@ const query = computed(() => ({
   form: form.value || undefined,
   language: language.value || undefined,
   calligram: calligram.value ? 'true' : undefined,
+  sort: sort.value,
   page: page.value,
 }))
 const { data: response, status, error } = await useFetch<PoemsResponse>('/api/poems', {
@@ -57,7 +59,7 @@ const { data: response, status, error } = await useFetch<PoemsResponse>('/api/po
   }),
 })
 
-watch([search, collection, form, language, calligram], () => {
+watch([search, collection, form, language, calligram, sort], () => {
   page.value = 1
 })
 
@@ -67,6 +69,7 @@ function clearFilters() {
   form.value = ''
   language.value = ''
   calligram.value = false
+  sort.value = 'date-desc'
   page.value = 1
 }
 
@@ -79,11 +82,12 @@ useSeoMeta({
 <template>
   <main>
     <section class="mb-8">
-      <div class="banner-placeholder mb-6" aria-label="Emplacement réservé au futur bandeau">
-        <span>Emplacement réservé au bandeau</span>
+      <div class="banner-placeholder mb-6" aria-label="Bandeau Yowaki">
+        <div>
+          <h1 class="text-h3 text-sm-h2">Yowaki - créations diverses</h1>
+          <p class="text-h6 mt-2 mb-0">Quelques créations au fil du criterium</p>
+        </div>
       </div>
-      <h1 class="text-h3 text-sm-h2 mb-2">Yowaki - créations diverses</h1>
-      <p class="text-h6 text-medium-emphasis">Quelques créations au fil du criterium</p>
     </section>
 
     <v-text-field
@@ -99,17 +103,27 @@ useSeoMeta({
     <v-card variant="tonal" class="mb-8">
       <v-card-text>
         <v-row align="center">
-          <v-col cols="12" sm="5">
+          <v-col cols="12" sm="4">
             <v-select v-model="collection" :items="references?.collections" label="Collection" clearable hide-details />
           </v-col>
-          <v-col cols="12" sm="5">
+          <v-col cols="12" sm="4">
             <v-select v-model="form" :items="references?.forms" label="Forme" clearable hide-details />
           </v-col>
-          <v-col cols="12" sm="5">
+          <v-col cols="12" sm="4">
             <v-select v-model="language" :items="references?.languages" label="Langue" clearable hide-details />
           </v-col>
-          <v-col cols="12" sm="2">
-            <v-checkbox v-model="calligram" label="Calligrammes" hide-details />
+        </v-row>
+        <v-row align="center" class="mt-1">
+          <v-col cols="12" sm="4">
+            <v-checkbox v-model="calligram" label="Calligrammes" hide-details class="calligram-filter" />
+          </v-col>
+          <v-col cols="12" sm="8">
+            <v-select v-model="sort" :items="[
+              { title: 'Plus récent → plus ancien', value: 'date-desc' },
+              { title: 'Plus ancien → plus récent', value: 'date-asc' },
+              { title: 'Nom (A-Z)', value: 'title-asc' },
+              { title: 'Nom (Z-A)', value: 'title-desc' },
+            ]" label="Trier par" hide-details />
           </v-col>
         </v-row>
         <v-btn variant="text" prepend-icon="mdi-filter-off" @click="clearFilters">Réinitialiser</v-btn>
@@ -170,5 +184,9 @@ useSeoMeta({
   place-items: center;
   color: rgb(var(--v-theme-primary));
   background: rgba(var(--v-theme-primary), 0.06);
+}
+
+.calligram-filter :deep(.v-label) {
+  white-space: nowrap;
 }
 </style>

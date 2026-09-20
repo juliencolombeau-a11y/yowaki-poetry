@@ -1,8 +1,15 @@
 # Spécifications fonctionnelles et techniques — Yowaki Poetry
 
+## État de référence
+
+La V1 est déployée sur Cloudflare Workers à l'adresse :
+`https://yowaki-poetry.yboawhafkuil.workers.dev`.
+
+Elle utilise une base Cloudflare D1 contenant **494 poèmes**, le binding `DB`, des sessions `nuxt-auth-utils` et Cloudinary pour les médias. Le compte administrateur initial a été créé et le secret temporaire de bootstrap a été supprimé après déploiement.
+
 ## 1. Objet du projet
 
-Yowaki Poetry est un site web responsive permettant de consulter et d'administrer le recueil de poèmes de Yowaki. Le projet doit transformer un corpus existant d'environ 494 textes détectés dans `poemes.md` — le nombre exact restant à confirmer lors de la validation éditoriale — dont une partie des métadonnées est décrite dans un export CSV, en un catalogue consultable, filtrable et enrichissable.
+Yowaki Poetry est un site web responsive permettant de consulter et d'administrer le recueil de poèmes de Yowaki. Le projet transforme un corpus de 494 textes détectés dans `poemes.md` - dont une partie des métadonnées est décrite dans un export CSV - en un catalogue consultable, filtrable et enrichissable.
 
 Le site doit rester utilisable sans compte pour la consultation publique. Un espace d'administration protégé doit permettre à un administrateur unique de gérer les fiches, les classifications et les médias associés.
 
@@ -13,7 +20,7 @@ Les nouvelles et autres textes longs, dont le contenu source est un PDF, sont ho
 ### 2.1 Version initiale
 
 - page d'accueil avec identité du recueil, texte d'introduction et accès immédiat à la recherche ;
-- catalogue public sous forme de cartes responsive ;
+- catalogue public sous forme de cartes responsive, avec vignette image lorsqu'elle existe ;
 - recherche textuelle ;
 - filtres par collection, forme, métrique, rimes, langue, thème, calligramme et type de contenu ;
 - pagination ou chargement par pages ;
@@ -58,7 +65,7 @@ L'accueil doit présenter :
 - un champ de recherche ;
 - des filtres accessibles sur grand écran et regroupés dans un panneau sur mobile ;
 - le nombre de résultats ;
-- des cartes contenant au minimum le titre, la série, les caractéristiques principales, une vignette et un lien vers la fiche.
+- des cartes contenant le titre, la collection en sous-titre lorsqu'elle existe, les tags de forme et métrique, une vignette conditionnelle et un lien vers la fiche.
 
 La recherche doit porter au minimum sur le titre, le texte intégral, la série, la langue et les thèmes. Les filtres sont combinables. Toute modification de recherche ou de filtre remet la pagination à la première page.
 
@@ -92,6 +99,9 @@ L'administrateur doit pouvoir :
 - supprimer une fiche après confirmation explicite ;
 - créer une nouvelle valeur de référence lorsqu'une classification n'existe pas encore ;
 - voir les erreurs de validation de façon compréhensible.
+- rechercher dans le titre et le texte intégral ;
+- parcourir les résultats par pages de 50 lignes ;
+- saisir une valeur existante ou une nouvelle valeur pour les champs éditoriaux de référence.
 
 La suppression d'un poème ne doit pas supprimer silencieusement un média partagé. La stratégie de nettoyage Cloudinary doit être définie et testée avant d'être automatisée.
 
@@ -116,7 +126,7 @@ Champs recommandés :
 | `rhymeScheme` | référence | Non | Plates, croisées, embrassées, redoublées |
 | `languages` | références multiples | Oui par défaut | Français, anglais, occitan, bilingue, etc. |
 | `isCalligram` | booléen | Oui | Valeur issue du corpus, modifiable |
-| `contentType` | référence | Oui | `poem` en V1, extensible à `short-story` |
+| `contentType` | référence | Oui | `poem` en V1, extensible à `news` ou `short-story` |
 | `date` | date | Non | Date de création, vide tant qu'elle n'est pas connue |
 | `notes` | texte long | Non | Notes éditoriales affichées publiquement et modifiables par l'administrateur |
 | `createdAt` | date | Oui | Audit |
@@ -157,6 +167,8 @@ L'import doit être déterministe, relançable et traçable :
 7. ne jamais déduire silencieusement une information éditoriale incertaine et laisser la date vide lorsqu'elle est inconnue.
 
 Les fichiers Markdown d'analyse servent de sources d'aide à la classification, mais ne doivent pas être considérés comme vérité automatique sans contrôle. Les cas ambigus doivent être signalés dans le rapport d'import ou dans l'interface d'administration.
+
+L'import initial réalisé contient 494 poèmes. Le fichier `poemes.md` reste la source de référence pour le titre, le texte et l'ordre documentaire ; le CSV complète uniquement les métadonnées lorsqu'une correspondance fiable existe.
 
 ## 6. Médias et PDF
 
@@ -274,7 +286,11 @@ En production :
 9. supprimer le secret de bootstrap et redéployer ;
 10. tester les parcours publics, administratifs, médias et mobiles.
 
-Ne pas déclarer manuellement un binding D1 si NuxtHub le génère déjà. Un build réussi ne prouve pas que les migrations, secrets et données de production sont corrects.
+La configuration de production actuelle déclare un unique binding D1 `DB`, utilisé par NuxtHub. Ne jamais ajouter un second binding vers la même base. Un build réussi ne prouve pas que les migrations, secrets et données de production sont corrects.
+
+Après le premier bootstrap, `NUXT_BOOTSTRAP_SECRET` doit être supprimé de Cloudflare et l'application redéployée. Toute évolution de schéma doit ajouter une nouvelle migration versionnée, puis être appliquée à D1 avant le déploiement du code qui l'utilise.
+
+Les exports `.data/` servent uniquement aux opérations locales ou d'import ponctuel. Ils restent exclus de GitHub et ne doivent pas être servis par l'application.
 
 ## 11. Critères d'acceptation de la V1
 
@@ -290,3 +306,14 @@ Ne pas déclarer manuellement un binding D1 si NuxtHub le génère déjà. Un bu
 - les migrations locales et D1 sont identiques et appliquées dans l'ordre ;
 - aucun secret ni export de données n'est présent dans le dépôt ;
 - les parcours principaux fonctionnent sur mobile et au clavier.
+
+## 12. Règles d'évolution
+
+- préserver `contentType = poem` pour les fiches existantes ;
+- ajouter les nouvelles comme un type de contenu distinct après validation du modèle éditorial ;
+- ne pas rendre obligatoires pour les poèmes les champs spécifiques aux nouvelles ;
+- créer une migration SQL pour chaque évolution de schéma ;
+- préserver les anciennes URL et le `documentOrder` des poèmes ;
+- tester localement, construire, effectuer un dry-run Wrangler et vérifier D1 avant chaque mise en production ;
+- conserver les valeurs éditoriales saisies librement, même lorsqu'elles ne figurent pas encore dans les listes de référence ;
+- documenter toute modification de la structure des médias, des droits ou du processus de déploiement.

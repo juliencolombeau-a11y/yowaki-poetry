@@ -64,6 +64,8 @@ const collection = ref('')
 const form = ref('')
 const language = ref('')
 const calligram = ref(false)
+const searchScope = ref<'all' | 'title'>('all')
+const sort = ref('order-asc')
 const page = ref(1)
 const { data: references } = await useFetch<ReferencesResponse>('/api/poems/references')
 const adminQuery = computed(() => ({
@@ -72,6 +74,8 @@ const adminQuery = computed(() => ({
   form: form.value || undefined,
   language: language.value || undefined,
   calligram: calligram.value ? 'true' : undefined,
+  searchScope: searchScope.value,
+  sort: sort.value,
   page: page.value,
 }))
 const { data: poemsResponse, status: poemsStatus, error: poemsError } = await useFetch<AdminPoemsResponse>('/api/admin/poems', {
@@ -109,7 +113,7 @@ const newPoem = ref({
   isCalligram: false,
 })
 
-watch([search, collection, form, language, calligram], () => {
+watch([search, collection, form, language, calligram, searchScope, sort], () => {
   page.value = 1
 })
 
@@ -119,6 +123,8 @@ function clearFilters() {
   form.value = ''
   language.value = ''
   calligram.value = false
+  searchScope.value = 'all'
+  sort.value = 'order-asc'
   page.value = 1
 }
 
@@ -161,6 +167,9 @@ async function createPoem() {
 async function editPoem(id: number) {
   saveError.value = ''
   saveSuccess.value = false
+  mediaError.value = ''
+  mediaSuccess.value = ''
+  mediaFile.value = null
   selectedPoem.value = await $fetch<EditablePoem>(`/api/poems/${id}`)
   selectedId.value = id
 }
@@ -274,6 +283,25 @@ useSeoMeta({
             <v-text-field v-model="search" label="Rechercher dans le titre ou le texte" prepend-inner-icon="mdi-magnify" clearable hide-details />
           </v-col>
           <v-col cols="12" md="4" class="d-flex justify-md-end">
+            <div class="d-flex align-center ga-2">
+              <span class="text-body-2 text-medium-emphasis">Rechercher dans</span>
+              <v-btn-toggle v-model="searchScope" mandatory density="compact" color="primary" variant="outlined">
+                <v-btn value="all">Tout</v-btn>
+                <v-btn value="title">Titre</v-btn>
+              </v-btn-toggle>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row align="center" class="mt-1">
+          <v-col cols="12" md="4">
+            <v-select v-model="sort" :items="[
+              { title: 'Ordre croissant', value: 'order-asc' },
+              { title: 'Ordre décroissant', value: 'order-desc' },
+              { title: 'Nom (A-Z)', value: 'title-asc' },
+              { title: 'Nom (Z-A)', value: 'title-desc' },
+            ]" label="Trier par" hide-details />
+          </v-col>
+          <v-col cols="12" md="4" class="d-flex justify-md-end">
             <v-checkbox v-model="calligram" label="Calligrammes" hide-details />
           </v-col>
         </v-row>
@@ -356,7 +384,20 @@ useSeoMeta({
             </v-btn>
             <div v-if="selectedPoem.media.length" class="text-body-2 mt-4">
               <div v-for="media in selectedPoem.media" :key="media.id" class="d-flex align-center justify-space-between ga-3 mb-2">
-                <span>{{ media.kind === 'image' ? 'Image' : 'PDF' }} : {{ media.originalFilename || media.url }}</span>
+                <div class="d-flex align-center ga-3">
+                  <v-dialog v-if="media.kind === 'image'" max-width="900">
+                    <template #activator="{ props }">
+                      <v-img v-bind="props" :src="media.url" :alt="media.originalFilename || selectedPoem.title" width="72" height="72" cover rounded="lg" class="media-thumbnail" />
+                    </template>
+                    <template #default="{ isActive }">
+                      <v-card>
+                        <v-img :src="media.url" :alt="media.originalFilename || selectedPoem.title" max-height="80vh" contain />
+                        <v-card-actions><v-spacer /><v-btn variant="text" @click="isActive.value = false">Fermer</v-btn></v-card-actions>
+                      </v-card>
+                    </template>
+                  </v-dialog>
+                  <span>{{ media.kind === 'image' ? 'Image' : 'PDF' }} : {{ media.originalFilename || media.url }}</span>
+                </div>
                 <v-btn
                   size="small"
                   color="error"
@@ -405,5 +446,10 @@ useSeoMeta({
 .selected-row {
   background: rgba(var(--v-theme-primary), 0.12);
   cursor: pointer;
+}
+
+.media-thumbnail {
+  cursor: zoom-in;
+  flex: 0 0 auto;
 }
 </style>
