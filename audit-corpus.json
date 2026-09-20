@@ -1,0 +1,2347 @@
+{
+  "summary": {
+    "source_line_count": 8044,
+    "markdown_heading_count": 495,
+    "metadata_heading_count": 1,
+    "poem_count": 494,
+    "csv_row_count": 152,
+    "exact_csv_row_matches": 97,
+    "normalized_csv_row_matches": 152,
+    "markdown_without_csv_after_normalization": 337,
+    "csv_without_markdown_after_normalization": 0,
+    "markdown_duplicate_title_groups": 10,
+    "csv_duplicate_title_groups": 2,
+    "empty_body_count": 0,
+    "vertical_tab_count": 30,
+    "entries_with_vertical_tabs": 2,
+    "calligram_marker_count": 22,
+    "collection_or_type_suffix_count": 84,
+    "min_body_lines": 4,
+    "max_body_lines": 56,
+    "average_body_lines": 15.27,
+    "min_body_chars": 117,
+    "max_body_chars": 2500,
+    "average_body_chars": 575.11
+  },
+  "markdown_without_csv": [
+    {
+      "order": 128,
+      "title": "Émergence",
+      "line": 1993
+    },
+    {
+      "order": 129,
+      "title": "Locomotion",
+      "line": 2008
+    },
+    {
+      "order": 130,
+      "title": "Émoi",
+      "line": 2025
+    },
+    {
+      "order": 131,
+      "title": "Promenade",
+      "line": 2042
+    },
+    {
+      "order": 132,
+      "title": "Explosion douteuse",
+      "line": 2059
+    },
+    {
+      "order": 133,
+      "title": "Écrire",
+      "line": 2072
+    },
+    {
+      "order": 134,
+      "title": "J’ai peur",
+      "line": 2087
+    },
+    {
+      "order": 135,
+      "title": "Délit",
+      "line": 2112
+    },
+    {
+      "order": 136,
+      "title": "Je vais essayer de parler de moi",
+      "line": 2145
+    },
+    {
+      "order": 137,
+      "title": "Lecture",
+      "line": 2188
+    },
+    {
+      "order": 138,
+      "title": "Octobre – jeunesse",
+      "line": 2205
+    },
+    {
+      "order": 139,
+      "title": "Halloween – jeunesse",
+      "line": 2222
+    },
+    {
+      "order": 141,
+      "title": "Musique naturelle",
+      "line": 2248
+    },
+    {
+      "order": 142,
+      "title": "Absurde",
+      "line": 2263
+    },
+    {
+      "order": 143,
+      "title": "Pierre aux sacrifices",
+      "line": 2276
+    },
+    {
+      "order": 145,
+      "title": "Escapade",
+      "line": 2300
+    },
+    {
+      "order": 146,
+      "title": "Qui sommes-nous ?",
+      "line": 2321
+    },
+    {
+      "order": 147,
+      "title": "Comment",
+      "line": 2340
+    },
+    {
+      "order": 148,
+      "title": "Salle d’attente",
+      "line": 2357
+    },
+    {
+      "order": 149,
+      "title": "Noël",
+      "line": 2378
+    },
+    {
+      "order": 150,
+      "title": "Étoiles",
+      "line": 2395
+    },
+    {
+      "order": 151,
+      "title": "Champignons – jeunesse",
+      "line": 2416
+    },
+    {
+      "order": 152,
+      "title": "Loco-émotive",
+      "line": 2435
+    },
+    {
+      "order": 153,
+      "title": "Qu’y a-t-il",
+      "line": 2452
+    },
+    {
+      "order": 154,
+      "title": "Charlot",
+      "line": 2469
+    },
+    {
+      "order": 155,
+      "title": "Le cirque",
+      "line": 2486
+    },
+    {
+      "order": 156,
+      "title": "Assis",
+      "line": 2515
+    },
+    {
+      "order": 157,
+      "title": "CHU-te",
+      "line": 2532
+    },
+    {
+      "order": 159,
+      "title": "Camion - jeunesse",
+      "line": 2582
+    },
+    {
+      "order": 160,
+      "title": "Voiture - jeunesse",
+      "line": 2595
+    },
+    {
+      "order": 165,
+      "title": "Télévision -  jeunesse",
+      "line": 2665
+    },
+    {
+      "order": 166,
+      "title": "Les décors",
+      "line": 2680
+    },
+    {
+      "order": 167,
+      "title": "Les costumes",
+      "line": 2701
+    },
+    {
+      "order": 168,
+      "title": "Ecrans",
+      "line": 2722
+    },
+    {
+      "order": 169,
+      "title": "Je voudrais être un homme heureux",
+      "line": 2739
+    },
+    {
+      "order": 170,
+      "title": "Cellule",
+      "line": 2761
+    },
+    {
+      "order": 171,
+      "title": "Le jardinier",
+      "line": 2774
+    },
+    {
+      "order": 172,
+      "title": "Les accessoires",
+      "line": 2791
+    },
+    {
+      "order": 173,
+      "title": "C – calligramme",
+      "line": 2812
+    },
+    {
+      "order": 174,
+      "title": "Est-ce que la vie est un jeu",
+      "line": 2825
+    },
+    {
+      "order": 175,
+      "title": "Peine, chagrin, et cætera",
+      "line": 2862
+    },
+    {
+      "order": 177,
+      "title": "Destin",
+      "line": 2894
+    },
+    {
+      "order": 178,
+      "title": "Sécurité, régie, accueil",
+      "line": 2911
+    },
+    {
+      "order": 179,
+      "title": "Acteurs",
+      "line": 2930
+    },
+    {
+      "order": 180,
+      "title": "Boulet",
+      "line": 2951
+    },
+    {
+      "order": 181,
+      "title": "Laissez-moi",
+      "line": 2970
+    },
+    {
+      "order": 182,
+      "title": "Bonne année 2013",
+      "line": 2983
+    },
+    {
+      "order": 183,
+      "title": "Le secret",
+      "line": 2996
+    },
+    {
+      "order": 184,
+      "title": "Déclaration",
+      "line": 3009
+    },
+    {
+      "order": 185,
+      "title": "Boutique de jouets",
+      "line": 3022
+    },
+    {
+      "order": 186,
+      "title": "L’écureuil – jeunesse",
+      "line": 3061
+    },
+    {
+      "order": 187,
+      "title": "Dame tortue – jeunesse",
+      "line": 3070
+    },
+    {
+      "order": 188,
+      "title": "Dragon affamé – jeunesse",
+      "line": 3079
+    },
+    {
+      "order": 189,
+      "title": "Météo - jeunesse",
+      "line": 3092
+    },
+    {
+      "order": 190,
+      "title": "Faisons-le à la main – jeunesse",
+      "line": 3101
+    },
+    {
+      "order": 191,
+      "title": "Petite graine – jeunesse",
+      "line": 3110
+    },
+    {
+      "order": 192,
+      "title": "Chat fou-jeunesse",
+      "line": 3131
+    },
+    {
+      "order": 193,
+      "title": "Journée ordinaire",
+      "line": 3144
+    },
+    {
+      "order": 194,
+      "title": "Exceptionnel",
+      "line": 3187
+    },
+    {
+      "order": 196,
+      "title": "Une étoile à la fenêtre",
+      "line": 3218
+    },
+    {
+      "order": 197,
+      "title": "Fantasy",
+      "line": 3235
+    },
+    {
+      "order": 198,
+      "title": "Les mots",
+      "line": 3292
+    },
+    {
+      "order": 199,
+      "title": "S’échapper",
+      "line": 3307
+    },
+    {
+      "order": 200,
+      "title": "Noël – jeunesse",
+      "line": 3324
+    },
+    {
+      "order": 201,
+      "title": "Oppressant",
+      "line": 3341
+    },
+    {
+      "order": 202,
+      "title": "Il approche",
+      "line": 3354
+    },
+    {
+      "order": 203,
+      "title": "J’aimerais",
+      "line": 3375
+    },
+    {
+      "order": 204,
+      "title": "Carrés noirs",
+      "line": 3392
+    },
+    {
+      "order": 205,
+      "title": "Une petite mouche - jeunesse",
+      "line": 3409
+    },
+    {
+      "order": 206,
+      "title": "Le singe - jeunesse",
+      "line": 3422
+    },
+    {
+      "order": 207,
+      "title": "Ecrire",
+      "line": 3433
+    },
+    {
+      "order": 208,
+      "title": "Le monstre souterrain",
+      "line": 3450
+    },
+    {
+      "order": 210,
+      "title": "Acupuncteur",
+      "line": 3485
+    },
+    {
+      "order": 211,
+      "title": "La peur",
+      "line": 3502
+    },
+    {
+      "order": 212,
+      "title": "Crapaud pas beau – jeunesse",
+      "line": 3519
+    },
+    {
+      "order": 213,
+      "title": "Le rouge-gorge – jeunesse",
+      "line": 3528
+    },
+    {
+      "order": 214,
+      "title": "D – calligramme",
+      "line": 3537
+    },
+    {
+      "order": 215,
+      "title": "E – calligramme",
+      "line": 3550
+    },
+    {
+      "order": 217,
+      "title": "Lire",
+      "line": 3578
+    },
+    {
+      "order": 218,
+      "title": "Cannelés",
+      "line": 3595
+    },
+    {
+      "order": 220,
+      "title": "Je me suis perdu",
+      "line": 3629
+    },
+    {
+      "order": 221,
+      "title": "Symptômes",
+      "line": 3648
+    },
+    {
+      "order": 222,
+      "title": "Un instant",
+      "line": 3665
+    },
+    {
+      "order": 223,
+      "title": "Elle écrit",
+      "line": 3680
+    },
+    {
+      "order": 225,
+      "title": "Porte close",
+      "line": 3710
+    },
+    {
+      "order": 226,
+      "title": "Le contrat",
+      "line": 3723
+    },
+    {
+      "order": 227,
+      "title": "Un escargot au marché - jeunesse",
+      "line": 3748
+    },
+    {
+      "order": 228,
+      "title": "Posthume",
+      "line": 3759
+    },
+    {
+      "order": 229,
+      "title": "Chocolat",
+      "line": 3774
+    },
+    {
+      "order": 230,
+      "title": "Bulles et pépiements - jeunesse",
+      "line": 3785
+    },
+    {
+      "order": 231,
+      "title": "Aujourd’hui",
+      "line": 3798
+    },
+    {
+      "order": 232,
+      "title": "Intempéries",
+      "line": 3815
+    },
+    {
+      "order": 233,
+      "title": "Lueur vague",
+      "line": 3834
+    },
+    {
+      "order": 235,
+      "title": "Une fée s’est posée",
+      "line": 3862
+    },
+    {
+      "order": 236,
+      "title": "Labyrinthe",
+      "line": 3877
+    },
+    {
+      "order": 237,
+      "title": "Ecrire c’est une histoire",
+      "line": 3894
+    },
+    {
+      "order": 238,
+      "title": "Ecrivain",
+      "line": 3911
+    },
+    {
+      "order": 239,
+      "title": "Ce soir",
+      "line": 3926
+    },
+    {
+      "order": 240,
+      "title": "Le compte est bon",
+      "line": 3945
+    },
+    {
+      "order": 241,
+      "title": "Montée",
+      "line": 3955
+    },
+    {
+      "order": 242,
+      "title": "1, 2, 3",
+      "line": 3968
+    },
+    {
+      "order": 243,
+      "title": "Quand la musique",
+      "line": 3973
+    },
+    {
+      "order": 245,
+      "title": "Une nuit, une promenade",
+      "line": 4001
+    },
+    {
+      "order": 246,
+      "title": "Ombre d’hiver",
+      "line": 4014
+    },
+    {
+      "order": 247,
+      "title": "Entre deux",
+      "line": 4029
+    },
+    {
+      "order": 248,
+      "title": "Rien",
+      "line": 4044
+    },
+    {
+      "order": 249,
+      "title": "Récit de nuit",
+      "line": 4059
+    },
+    {
+      "order": 250,
+      "title": "Le poème est là",
+      "line": 4076
+    },
+    {
+      "order": 251,
+      "title": "Abandon",
+      "line": 4091
+    },
+    {
+      "order": 252,
+      "title": "Une nuit secrète",
+      "line": 4112
+    },
+    {
+      "order": 253,
+      "title": "Quatre pour un",
+      "line": 4129
+    },
+    {
+      "order": 254,
+      "title": "Mégalithes",
+      "line": 4144
+    },
+    {
+      "order": 256,
+      "title": "Effroi",
+      "line": 4178
+    },
+    {
+      "order": 257,
+      "title": "Une rue ensoleillée",
+      "line": 4197
+    },
+    {
+      "order": 258,
+      "title": "Musicale",
+      "line": 4214
+    },
+    {
+      "order": 259,
+      "title": "Giboulées",
+      "line": 4227
+    },
+    {
+      "order": 260,
+      "title": "Instruments",
+      "line": 4242
+    },
+    {
+      "order": 261,
+      "title": "Parking de nuit",
+      "line": 4259
+    },
+    {
+      "order": 262,
+      "title": "Au bout du conte",
+      "line": 4278
+    },
+    {
+      "order": 263,
+      "title": "En retard",
+      "line": 4297
+    },
+    {
+      "order": 264,
+      "title": "La plage",
+      "line": 4320
+    },
+    {
+      "order": 265,
+      "title": "Bazar",
+      "line": 4339
+    },
+    {
+      "order": 266,
+      "title": "Muse",
+      "line": 4355
+    },
+    {
+      "order": 267,
+      "title": "Nuages",
+      "line": 4372
+    },
+    {
+      "order": 268,
+      "title": "Astre nocturne",
+      "line": 4385
+    },
+    {
+      "order": 269,
+      "title": "Un réveil ordinaire",
+      "line": 4398
+    },
+    {
+      "order": 270,
+      "title": "Déménagement",
+      "line": 4415
+    },
+    {
+      "order": 271,
+      "title": "Promenade",
+      "line": 4434
+    },
+    {
+      "order": 272,
+      "title": "Clef",
+      "line": 4449
+    },
+    {
+      "order": 273,
+      "title": "Méli-mélo de mots",
+      "line": 4470
+    },
+    {
+      "order": 274,
+      "title": "Déambulation",
+      "line": 4487
+    },
+    {
+      "order": 275,
+      "title": "Matin",
+      "line": 4516
+    },
+    {
+      "order": 276,
+      "title": "Un monde sans toi",
+      "line": 4531
+    },
+    {
+      "order": 277,
+      "title": "C’est juste",
+      "line": 4550
+    },
+    {
+      "order": 278,
+      "title": "Attente",
+      "line": 4571
+    },
+    {
+      "order": 279,
+      "title": "Idée noire",
+      "line": 4608
+    },
+    {
+      "order": 280,
+      "title": "Type texte",
+      "line": 4621
+    },
+    {
+      "order": 281,
+      "title": "Ruisselant",
+      "line": 4638
+    },
+    {
+      "order": 282,
+      "title": "A la tombée",
+      "line": 4653
+    },
+    {
+      "order": 283,
+      "title": "Paris-calligramme",
+      "line": 4666
+    },
+    {
+      "order": 284,
+      "title": "Rand’automne",
+      "line": 4683
+    },
+    {
+      "order": 285,
+      "title": "Nuit déserte",
+      "line": 4698
+    },
+    {
+      "order": 286,
+      "title": "Le poème nouveau",
+      "line": 4715
+    },
+    {
+      "order": 287,
+      "title": "Vingt-cinq",
+      "line": 4730
+    },
+    {
+      "order": 288,
+      "title": "Soirée d’hiver",
+      "line": 4747
+    },
+    {
+      "order": 289,
+      "title": "Tourment",
+      "line": 4760
+    },
+    {
+      "order": 290,
+      "title": "Suspendus",
+      "line": 4775
+    },
+    {
+      "order": 291,
+      "title": "Foudre",
+      "line": 4788
+    },
+    {
+      "order": 292,
+      "title": "Guten tag",
+      "line": 4801
+    },
+    {
+      "order": 293,
+      "title": "Gravure",
+      "line": 4814
+    },
+    {
+      "order": 294,
+      "title": "Errance",
+      "line": 4827
+    },
+    {
+      "order": 295,
+      "title": "Rêveries",
+      "line": 4844
+    },
+    {
+      "order": 296,
+      "title": "XXXVI",
+      "line": 4861
+    },
+    {
+      "order": 297,
+      "title": "Arc-en-ciel annuel",
+      "line": 4898
+    },
+    {
+      "order": 298,
+      "title": "« Soiret »",
+      "line": 4913
+    },
+    {
+      "order": 299,
+      "title": "Premières fois",
+      "line": 4928
+    },
+    {
+      "order": 300,
+      "title": "Entre ici et là-bas",
+      "line": 4943
+    },
+    {
+      "order": 301,
+      "title": "Horaires des repas",
+      "line": 4958
+    },
+    {
+      "order": 302,
+      "title": "Détour et retour",
+      "line": 4971
+    },
+    {
+      "order": 303,
+      "title": "Un instant",
+      "line": 4988
+    },
+    {
+      "order": 304,
+      "title": "Un poème",
+      "line": 5001
+    },
+    {
+      "order": 306,
+      "title": "Surprise au réveil",
+      "line": 5031
+    },
+    {
+      "order": 308,
+      "title": "Évasion en lignes",
+      "line": 5063
+    },
+    {
+      "order": 309,
+      "title": "Nature cachée",
+      "line": 5082
+    },
+    {
+      "order": 310,
+      "title": "Centre des mémoires",
+      "line": 5095
+    },
+    {
+      "order": 311,
+      "title": "Regrets hors délai",
+      "line": 5110
+    },
+    {
+      "order": 313,
+      "title": "Pour faire un parent…",
+      "line": 5138
+    },
+    {
+      "order": 314,
+      "title": "Pi",
+      "line": 5148
+    },
+    {
+      "order": 315,
+      "title": "Antinomie",
+      "line": 5161
+    },
+    {
+      "order": 316,
+      "title": "A côté",
+      "line": 5178
+    },
+    {
+      "order": 317,
+      "title": "Eléphant",
+      "line": 5193
+    },
+    {
+      "order": 318,
+      "title": "En train de l’écrit",
+      "line": 5202
+    },
+    {
+      "order": 319,
+      "title": "Croisée des amants",
+      "line": 5219
+    },
+    {
+      "order": 320,
+      "title": "Une ville",
+      "line": 5248
+    },
+    {
+      "order": 321,
+      "title": "Éolienne",
+      "line": 5268
+    },
+    {
+      "order": 322,
+      "title": "Des sens cachés",
+      "line": 5279
+    },
+    {
+      "order": 323,
+      "title": "Progrès",
+      "line": 5292
+    },
+    {
+      "order": 324,
+      "title": "Octobre rose",
+      "line": 5319
+    },
+    {
+      "order": 325,
+      "title": "Noël au poupon",
+      "line": 5334
+    },
+    {
+      "order": 326,
+      "title": "Le matin",
+      "line": 5347
+    },
+    {
+      "order": 327,
+      "title": "Prendre le temps",
+      "line": 5362
+    },
+    {
+      "order": 328,
+      "title": "Le temps s’enfuit",
+      "line": 5377
+    },
+    {
+      "order": 329,
+      "title": "Un p’tit coin de parapluie",
+      "line": 5392
+    },
+    {
+      "order": 330,
+      "title": "Marché(s) de Noël",
+      "line": 5405
+    },
+    {
+      "order": 331,
+      "title": "Émoi du pourquoi",
+      "line": 5420
+    },
+    {
+      "order": 332,
+      "title": "Au matin",
+      "line": 5433
+    },
+    {
+      "order": 333,
+      "title": "Juste quelques mots",
+      "line": 5454
+    },
+    {
+      "order": 334,
+      "title": "Matin",
+      "line": 5481
+    },
+    {
+      "order": 335,
+      "title": "Au bout",
+      "line": 5494
+    },
+    {
+      "order": 336,
+      "title": "Deux",
+      "line": 5527
+    },
+    {
+      "order": 337,
+      "title": "C’est comme",
+      "line": 5548
+    },
+    {
+      "order": 338,
+      "title": "Clair de lune",
+      "line": 5565
+    },
+    {
+      "order": 339,
+      "title": "L’attente",
+      "line": 5580
+    },
+    {
+      "order": 340,
+      "title": "Sur le départ",
+      "line": 5595
+    },
+    {
+      "order": 341,
+      "title": "Bagage",
+      "line": 5610
+    },
+    {
+      "order": 342,
+      "title": "Effet de fée",
+      "line": 5631
+    },
+    {
+      "order": 343,
+      "title": "Où",
+      "line": 5646
+    },
+    {
+      "order": 344,
+      "title": "Après la pluie…",
+      "line": 5661
+    },
+    {
+      "order": 346,
+      "title": "A quoi",
+      "line": 5694
+    },
+    {
+      "order": 347,
+      "title": "Une crique",
+      "line": 5709
+    },
+    {
+      "order": 348,
+      "title": "Nébuleux",
+      "line": 5738
+    },
+    {
+      "order": 349,
+      "title": "Attendre",
+      "line": 5755
+    },
+    {
+      "order": 350,
+      "title": "Jalouse",
+      "line": 5770
+    },
+    {
+      "order": 351,
+      "title": "Jeux de plume",
+      "line": 5785
+    },
+    {
+      "order": 352,
+      "title": "Un jour en juin",
+      "line": 5797
+    },
+    {
+      "order": 353,
+      "title": "L’été s’en vient",
+      "line": 5812
+    },
+    {
+      "order": 354,
+      "title": "Le loup sonne trois fois",
+      "line": 5827
+    },
+    {
+      "order": 355,
+      "title": "Détail",
+      "line": 5842
+    },
+    {
+      "order": 356,
+      "title": "Aux heures dorées",
+      "line": 5857
+    },
+    {
+      "order": 357,
+      "title": "Gare à l’aléa",
+      "line": 5874
+    },
+    {
+      "order": 358,
+      "title": "Les autres",
+      "line": 5889
+    },
+    {
+      "order": 359,
+      "title": "Rentrée litté-rail",
+      "line": 5904
+    },
+    {
+      "order": 360,
+      "title": "Sonnet ! et entrez",
+      "line": 5921
+    },
+    {
+      "order": 361,
+      "title": "Tournant",
+      "line": 5936
+    },
+    {
+      "order": 362,
+      "title": "Au-dessus des rails",
+      "line": 5953
+    },
+    {
+      "order": 363,
+      "title": "Petit peuple ?",
+      "line": 5968
+    },
+    {
+      "order": 364,
+      "title": "La folie des chars et des gens",
+      "line": 5983
+    },
+    {
+      "order": 365,
+      "title": "Un banc",
+      "line": 5998
+    },
+    {
+      "order": 366,
+      "title": "Soir",
+      "line": 6013
+    },
+    {
+      "order": 367,
+      "title": "Intra-cité",
+      "line": 6023
+    },
+    {
+      "order": 368,
+      "title": "Ville endormie",
+      "line": 6040
+    },
+    {
+      "order": 369,
+      "title": "Paysage",
+      "line": 6055
+    },
+    {
+      "order": 370,
+      "title": "Crime au cœur fondant",
+      "line": 6070
+    },
+    {
+      "order": 371,
+      "title": "Réverbère",
+      "line": 6085
+    },
+    {
+      "order": 372,
+      "title": "Ru",
+      "line": 6098
+    },
+    {
+      "order": 373,
+      "title": "Capter",
+      "line": 6113
+    },
+    {
+      "order": 375,
+      "title": "Un tour de cadran",
+      "line": 6143
+    },
+    {
+      "order": 376,
+      "title": "Famille",
+      "line": 6158
+    },
+    {
+      "order": 377,
+      "title": "Lycée",
+      "line": 6173
+    },
+    {
+      "order": 378,
+      "title": "Toi sans moi",
+      "line": 6188
+    },
+    {
+      "order": 379,
+      "title": "Hou",
+      "line": 6205
+    },
+    {
+      "order": 380,
+      "title": "L’agneau et le loup",
+      "line": 6224
+    },
+    {
+      "order": 381,
+      "title": "Dix-cussions et plus",
+      "line": 6237
+    },
+    {
+      "order": 382,
+      "title": "Juste un grain…",
+      "line": 6252
+    },
+    {
+      "order": 383,
+      "title": "De l’autre côté",
+      "line": 6267
+    },
+    {
+      "order": 384,
+      "title": "Un petit banc",
+      "line": 6282
+    },
+    {
+      "order": 385,
+      "title": "Rêver de vivre, vivre et rêver",
+      "line": 6297
+    },
+    {
+      "order": 386,
+      "title": "Magie de Noël",
+      "line": 6312
+    },
+    {
+      "order": 387,
+      "title": "Trébucher",
+      "line": 6327
+    },
+    {
+      "order": 388,
+      "title": "Oreille",
+      "line": 6342
+    },
+    {
+      "order": 389,
+      "title": "Conjuguer plaire",
+      "line": 6355
+    },
+    {
+      "order": 390,
+      "title": "Verbe sans verbe",
+      "line": 6370
+    },
+    {
+      "order": 391,
+      "title": "C’est",
+      "line": 6385
+    },
+    {
+      "order": 392,
+      "title": "Ploc",
+      "line": 6398
+    },
+    {
+      "order": 393,
+      "title": "Un flocon",
+      "line": 6411
+    },
+    {
+      "order": 394,
+      "title": "Neige",
+      "line": 6427
+    },
+    {
+      "order": 395,
+      "title": "Questions existantes en bleu ciel",
+      "line": 6440
+    },
+    {
+      "order": 396,
+      "title": "Mer-mots",
+      "line": 6453
+    },
+    {
+      "order": 397,
+      "title": "Lourd",
+      "line": 6468
+    },
+    {
+      "order": 398,
+      "title": "Juste à côté",
+      "line": 6483
+    },
+    {
+      "order": 399,
+      "title": "Courbe droite",
+      "line": 6498
+    },
+    {
+      "order": 400,
+      "title": "Résonnante",
+      "line": 6529
+    },
+    {
+      "order": 401,
+      "title": "Menthe",
+      "line": 6542
+    },
+    {
+      "order": 402,
+      "title": "Escape",
+      "line": 6563
+    },
+    {
+      "order": 403,
+      "title": "L’instant d’après",
+      "line": 6578
+    },
+    {
+      "order": 404,
+      "title": "Un soir d’été",
+      "line": 6593
+    },
+    {
+      "order": 405,
+      "title": "Quand les pensées déraillent",
+      "line": 6608
+    },
+    {
+      "order": 407,
+      "title": "Survol",
+      "line": 6639
+    },
+    {
+      "order": 408,
+      "title": "Dessous",
+      "line": 6654
+    },
+    {
+      "order": 409,
+      "title": "Couleurs changées",
+      "line": 6669
+    },
+    {
+      "order": 410,
+      "title": "Le silence du frigo",
+      "line": 6682
+    },
+    {
+      "order": 411,
+      "title": "Retour ce soir",
+      "line": 6697
+    },
+    {
+      "order": 412,
+      "title": "Il est temps",
+      "line": 6710
+    },
+    {
+      "order": 413,
+      "title": "Appareil photo – calligramme",
+      "line": 6725
+    },
+    {
+      "order": 414,
+      "title": "The lonely house",
+      "line": 6739
+    },
+    {
+      "order": 415,
+      "title": "Bande originale",
+      "line": 6754
+    },
+    {
+      "order": 416,
+      "title": "Fêtes",
+      "line": 6769
+    },
+    {
+      "order": 417,
+      "title": "Liberté",
+      "line": 6783
+    },
+    {
+      "order": 418,
+      "title": "Liberty",
+      "line": 6798
+    },
+    {
+      "order": 419,
+      "title": "Passé, présent, futur",
+      "line": 6821
+    },
+    {
+      "order": 420,
+      "title": "Sommeil imprudent",
+      "line": 6840
+    },
+    {
+      "order": 421,
+      "title": "Non écrit",
+      "line": 6874
+    },
+    {
+      "order": 422,
+      "title": "Le nez en l’air",
+      "line": 6887
+    },
+    {
+      "order": 423,
+      "title": "Run over and overrun",
+      "line": 6900
+    },
+    {
+      "order": 424,
+      "title": "Sourire",
+      "line": 6915
+    },
+    {
+      "order": 425,
+      "title": "Coquillages et crustacés",
+      "line": 6952
+    },
+    {
+      "order": 426,
+      "title": "Promenade",
+      "line": 6967
+    },
+    {
+      "order": 427,
+      "title": "Jouer la vie",
+      "line": 6982
+    },
+    {
+      "order": 428,
+      "title": "Nature envie",
+      "line": 6992
+    },
+    {
+      "order": 429,
+      "title": "Au fil du vent",
+      "line": 7007
+    },
+    {
+      "order": 430,
+      "title": "Semblable à la vie",
+      "line": 7017
+    },
+    {
+      "order": 431,
+      "title": "Capitaine",
+      "line": 7033
+    },
+    {
+      "order": 432,
+      "title": "Le sel de la vie",
+      "line": 7048
+    },
+    {
+      "order": 433,
+      "title": "Au bout du quai",
+      "line": 7063
+    },
+    {
+      "order": 434,
+      "title": "Matin",
+      "line": 7078
+    },
+    {
+      "order": 435,
+      "title": "Danse d’étoiles",
+      "line": 7093
+    },
+    {
+      "order": 436,
+      "title": "D’eau chaude et d’amitié",
+      "line": 7106
+    },
+    {
+      "order": 437,
+      "title": "Distiques de fées",
+      "line": 7121
+    },
+    {
+      "order": 438,
+      "title": "La chaise",
+      "line": 7138
+    },
+    {
+      "order": 439,
+      "title": "Étincelles",
+      "line": 7154
+    },
+    {
+      "order": 440,
+      "title": "Ce jour là de fête",
+      "line": 7169
+    },
+    {
+      "order": 441,
+      "title": "Fable en larme",
+      "line": 7184
+    },
+    {
+      "order": 442,
+      "title": "Coulée verte (et autres couleurs)",
+      "line": 7199
+    },
+    {
+      "order": 443,
+      "title": "**Emmêlé**·e·s",
+      "line": 7220
+    },
+    {
+      "order": 444,
+      "title": "Souvenir(s)",
+      "line": 7235
+    },
+    {
+      "order": 445,
+      "title": "La vie buissonnière",
+      "line": 7250
+    },
+    {
+      "order": 446,
+      "title": "Battons-nous en retraite !",
+      "line": 7265
+    },
+    {
+      "order": 447,
+      "title": "Entre hier et demain",
+      "line": 7280
+    },
+    {
+      "order": 448,
+      "title": "Eden",
+      "line": 7295
+    },
+    {
+      "order": 449,
+      "title": "L’être à faire",
+      "line": 7310
+    },
+    {
+      "order": 450,
+      "title": "Auto-lib’",
+      "line": 7325
+    },
+    {
+      "order": 451,
+      "title": "Moon",
+      "line": 7340
+    },
+    {
+      "order": 452,
+      "title": "Tempête",
+      "line": 7355
+    },
+    {
+      "order": 453,
+      "title": "Livre",
+      "line": 7370
+    },
+    {
+      "order": 454,
+      "title": "Nature assise",
+      "line": 7385
+    },
+    {
+      "order": 455,
+      "title": "Tourne",
+      "line": 7400
+    },
+    {
+      "order": 456,
+      "title": "JL",
+      "line": 7415
+    },
+    {
+      "order": 457,
+      "title": "Ils sont deux",
+      "line": 7430
+    },
+    {
+      "order": 458,
+      "title": "Disque d’une nuit",
+      "line": 7447
+    },
+    {
+      "order": 459,
+      "title": "À ça je n’y crois pas",
+      "line": 7462
+    },
+    {
+      "order": 460,
+      "title": "Colorée",
+      "line": 7479
+    },
+    {
+      "order": 461,
+      "title": "Musicalité",
+      "line": 7492
+    },
+    {
+      "order": 462,
+      "title": "Le temps s’arrête",
+      "line": 7507
+    },
+    {
+      "order": 463,
+      "title": "« Mais je l’aime »",
+      "line": 7522
+    },
+    {
+      "order": 464,
+      "title": "Histoire de pierres",
+      "line": 7537
+    },
+    {
+      "order": 465,
+      "title": "Ding-dong",
+      "line": 7552
+    },
+    {
+      "order": 466,
+      "title": "La laisse",
+      "line": 7567
+    },
+    {
+      "order": 467,
+      "title": "Planches",
+      "line": 7582
+    },
+    {
+      "order": 468,
+      "title": "Façades",
+      "line": 7595
+    },
+    {
+      "order": 469,
+      "title": "Données",
+      "line": 7612
+    },
+    {
+      "order": 470,
+      "title": "jaune",
+      "line": 7627
+    },
+    {
+      "order": 471,
+      "title": "C’est pour rire",
+      "line": 7646
+    },
+    {
+      "order": 472,
+      "title": "Inné-galité",
+      "line": 7663
+    },
+    {
+      "order": 473,
+      "title": "Image-i-nation",
+      "line": 7678
+    },
+    {
+      "order": 474,
+      "title": "Son corps, Son choix",
+      "line": 7693
+    },
+    {
+      "order": 477,
+      "title": "Scrutin sans fin",
+      "line": 7736
+    },
+    {
+      "order": 483,
+      "title": "Hasard de l'aérogare",
+      "line": 7826
+    },
+    {
+      "order": 484,
+      "title": "Actes manqués",
+      "line": 7845
+    },
+    {
+      "order": 485,
+      "title": "Retour en mots",
+      "line": 7870
+    },
+    {
+      "order": 486,
+      "title": "Tant qu’il y aura",
+      "line": 7883
+    },
+    {
+      "order": 487,
+      "title": "Ton invitation",
+      "line": 7896
+    },
+    {
+      "order": 488,
+      "title": "Non",
+      "line": 7926
+    },
+    {
+      "order": 490,
+      "title": "La première fois",
+      "line": 7958
+    },
+    {
+      "order": 491,
+      "title": "Résister",
+      "line": 7974
+    },
+    {
+      "order": 492,
+      "title": "Une feuille",
+      "line": 7990
+    },
+    {
+      "order": 493,
+      "title": "Pois",
+      "line": 8012
+    },
+    {
+      "order": 494,
+      "title": "Combien d’histoires ?",
+      "line": 8030
+    }
+  ],
+  "csv_without_markdown": [],
+  "markdown_duplicate_titles": [
+    {
+      "normalized": "automne",
+      "values": [
+        {
+          "title": "Automne - jeunesse",
+          "order": 3
+        },
+        {
+          "title": "Automne – Une année de sonnets",
+          "order": 57
+        },
+        {
+          "title": "Automne",
+          "order": 374
+        }
+      ]
+    },
+    {
+      "normalized": "musique",
+      "values": [
+        {
+          "title": "Musique",
+          "order": 20
+        },
+        {
+          "title": "Musique – jeunesse",
+          "order": 164
+        }
+      ]
+    },
+    {
+      "normalized": "hiver",
+      "values": [
+        {
+          "title": "Hiver - jeunesse",
+          "order": 38
+        },
+        {
+          "title": "Hiver – Une année de sonnets",
+          "order": 58
+        },
+        {
+          "title": "Hiver – jeunesse",
+          "order": 140
+        }
+      ]
+    },
+    {
+      "normalized": "printemps",
+      "values": [
+        {
+          "title": "Printemps – Une année de sonnets",
+          "order": 59
+        },
+        {
+          "title": "Printemps – jeunesse",
+          "order": 255
+        }
+      ]
+    },
+    {
+      "normalized": "sapin",
+      "values": [
+        {
+          "title": "Sapin - calligramme",
+          "order": 88
+        },
+        {
+          "title": "Sapin – Calligramme",
+          "order": 307
+        }
+      ]
+    },
+    {
+      "normalized": "promenade",
+      "values": [
+        {
+          "title": "Promenade",
+          "order": 131
+        },
+        {
+          "title": "Promenade",
+          "order": 271
+        },
+        {
+          "title": "Promenade",
+          "order": 426
+        }
+      ]
+    },
+    {
+      "normalized": "ecrire",
+      "values": [
+        {
+          "title": "Écrire",
+          "order": 133
+        },
+        {
+          "title": "Ecrire",
+          "order": 207
+        }
+      ]
+    },
+    {
+      "normalized": "noel",
+      "values": [
+        {
+          "title": "Noël",
+          "order": 149
+        },
+        {
+          "title": "Noël – jeunesse",
+          "order": 200
+        }
+      ]
+    },
+    {
+      "normalized": "un instant",
+      "values": [
+        {
+          "title": "Un instant",
+          "order": 222
+        },
+        {
+          "title": "Un instant",
+          "order": 303
+        }
+      ]
+    },
+    {
+      "normalized": "matin",
+      "values": [
+        {
+          "title": "Matin",
+          "order": 275
+        },
+        {
+          "title": "Matin",
+          "order": 334
+        },
+        {
+          "title": "Matin",
+          "order": 434
+        }
+      ]
+    }
+  ],
+  "csv_duplicate_titles": [
+    {
+      "normalized": "automne",
+      "values": [
+        {
+          "title": "Automne",
+          "id": "3"
+        },
+        {
+          "title": "Automne",
+          "id": "57"
+        }
+      ]
+    },
+    {
+      "normalized": "hiver",
+      "values": [
+        {
+          "title": "Hiver",
+          "id": "38"
+        },
+        {
+          "title": "Hiver",
+          "id": "58"
+        }
+      ]
+    }
+  ],
+  "review_flags": [
+    {
+      "order": 3,
+      "title": "Automne - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "La rentrée - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Samedi soir sur l’herbe - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 29,
+      "title": "L’hiver est là - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 31,
+      "title": "Gustave - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 38,
+      "title": "Hiver - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 43,
+      "title": "6 qui prend - Jeu",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 46,
+      "title": "Carnaval - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 56,
+      "title": "Le Printemps - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 75,
+      "title": "La chenille - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 77,
+      "title": "Pâques - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 78,
+      "title": "Magicien - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 79,
+      "title": "Toutou - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 85,
+      "title": "Munchkin - Jeu",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 86,
+      "title": "Cri - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 87,
+      "title": "Aux chandelles - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 88,
+      "title": "Sapin - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 89,
+      "title": "Corde - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 90,
+      "title": "Sax - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 91,
+      "title": "Temps - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 92,
+      "title": "Thé - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 102,
+      "title": "Zombies - Jeu",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 104,
+      "title": "Enceinte - calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 119,
+      "title": "Compagnon - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 138,
+      "title": "Octobre – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 139,
+      "title": "Halloween – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 140,
+      "title": "Hiver – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 144,
+      "title": "Cerf-volant – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 151,
+      "title": "Champignons – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 158,
+      "title": "A – Calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 159,
+      "title": "Camion - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 160,
+      "title": "Voiture - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 161,
+      "title": "B – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 162,
+      "title": "Locomotive – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 163,
+      "title": "Révolver – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 164,
+      "title": "Musique – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 165,
+      "title": "Télévision -  jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 173,
+      "title": "C – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 174,
+      "title": "Est-ce que la vie est un jeu",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 186,
+      "title": "L’écureuil – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 187,
+      "title": "Dame tortue – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 188,
+      "title": "Dragon affamé – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 189,
+      "title": "Météo - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 190,
+      "title": "Faisons-le à la main – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 191,
+      "title": "Petite graine – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 192,
+      "title": "Chat fou-jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 200,
+      "title": "Noël – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 205,
+      "title": "Une petite mouche - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 206,
+      "title": "Le singe - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 209,
+      "title": "Ours – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 212,
+      "title": "Crapaud pas beau – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 213,
+      "title": "Le rouge-gorge – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 214,
+      "title": "D – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 215,
+      "title": "E – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 219,
+      "title": "F – Calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 227,
+      "title": "Un escargot au marché - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 230,
+      "title": "Bulles et pépiements - jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 255,
+      "title": "Printemps – jeunesse",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 283,
+      "title": "Paris-calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 305,
+      "title": "Téléphone – Calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 307,
+      "title": "Sapin – Calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 351,
+      "title": "Jeux de plume",
+      "reasons": [
+        "type de contenu ? confirmer"
+      ]
+    },
+    {
+      "order": 413,
+      "title": "Appareil photo – calligramme",
+      "reasons": [
+        "calligramme ? v?rifier pour pr?server la mise en page"
+      ]
+    },
+    {
+      "order": 1,
+      "title": "Tristesse",
+      "reasons": [
+        "8 s?parateur(s) vertical(aux) ? normaliser"
+      ]
+    },
+    {
+      "order": 84,
+      "title": "Premier mai",
+      "reasons": [
+        "22 s?parateur(s) vertical(aux) ? normaliser"
+      ]
+    }
+  ]
+}

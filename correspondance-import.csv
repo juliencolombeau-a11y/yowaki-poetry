@@ -1,0 +1,495 @@
+﻿documentOrder,sourceHeadingLine,sourceTitle,title,legacyId,collection,form,meterAndRhyme,language,isCalligram,date,importStatus,matchReason,sourceVerticalTabCount
+1,4,Tristesse,Tristesse,1,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,8
+2,6,J’aime écrire des poèmes,J’aime écrire des poèmes,2,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+3,11,Automne - jeunesse,Automne,3,Jeunesse,,,,False,,matched_by_metadata,collection/titre suffixe,0
+4,20,La rentrée - jeunesse,La rentrée,4,Jeunesse,Vers libres,Tétrasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+5,33,J’ai été en voyage,J’ai été en voyage,5,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+6,50,Une étoile,Une étoile,6,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+7,59,Voyageurs,Voyageurs,7,,Quatrains,Décasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+8,74,Samedi soir sur l’herbe - jeunesse,Samedi soir sur l’herbe,8,Jeunesse,Quatrains,Alexandrin / Redoublées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+9,82,Dix heures,Dix heures,9,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+10,91,Pensée dévoilée ?,Pensée dévoilée ?,10,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+11,100,Partir,Partir,11,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+12,109,Le gui,Le gui,12,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+13,118,Éveil,Éveil,13,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+14,127,Dessine-moi un amour,Dessine-moi un amour,14,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+15,142,Flashover,Flashover,15,,Quatrain,Décasyllabe / Plates,Anglais,False,,matched,titre normalis? unique,0
+16,147,Dialogue,Dialogue,16,,Dialogue,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+17,162,Perdu·e,Perdu·e,17,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+18,175,Sérénade,Sérénade,18,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+19,188,Virtu-elle,Virtu-elle,19,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+20,205,Musique,Musique,20,,Vers libres,Tétrasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+21,220,Mélancolie optimiste,Mélancolie optimiste,21,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+22,235,Bonne année,Bonne année,22,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+23,249,Noisy date,Noisy date,23,,Distiques,Octosyllabe / Plates,Anglais,False,,matched,titre normalis? unique,0
+24,258,Impulsion,Impulsion,24,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+25,267,Fast love,Fast love,25,,Distiques,Tétrasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+26,278,Derrière l’écran,Derrière l’écran,26,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+27,293,Expression indirecte,Expression indirecte,27,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+28,310,Fantasy ordinaire,Fantasy ordinaire,28,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+29,332,L’hiver est là - jeunesse,L’hiver est là,29,Jeunesse,Tercets,Octosyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+30,342,A distance,A distance,30,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+31,355,Gustave - jeunesse,Gustave,31,Jeunesse,Quatrains,Octosyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+32,366,Instant,Instant,32,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+33,375,Outils scripteurs,Outils scripteurs,33,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+34,384,Blanche,Blanche,34,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+35,401,Souvenir d’école,Souvenir d’école,35,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+36,418,Création,Création,36,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+37,433,Départ,Départ,37,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+38,450,Hiver - jeunesse,Hiver,38,Jeunesse,,,,False,,matched_by_metadata,collection/titre suffixe,0
+39,459,3h du matin,3h du matin,39,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+40,476,Solitaire,Solitaire,40,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+41,485,Balade entre les lignes,Balade entre les lignes,41,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+42,502,Roue,Roue,42,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+43,511,6 qui prend - Jeu,6 qui prend,43,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+44,524,Tourmente,Tourmente,44,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+45,541,Entre nous,Entre nous,45,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+46,558,Carnaval - jeunesse,Carnaval,46,Jeunesse,Distiques,Hexasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+47,567,I.T.,I.T.,47,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+48,588,Futur conditionnel,Futur conditionnel,48,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+49,605,Aller-retour,Aller-retour,49,,Distiques,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+50,636,Naissance – Les  sonnets de la vie,Naissance,50,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+51,651,Enfance – Les sonnets de la vie,Enfance,51,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+52,666,Adolescence – Les sonnets de la vie,Adolescence,52,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+53,681,Adulte – Les sonnets de la vie,Adulte,53,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+54,696,Vieillesse – Les sonnets de la vie,Vieillesse,54,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+55,711,Mort – Les sonnets de la vie,Mort,55,Les sonnets de la vie,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+56,726,Le Printemps - jeunesse,Le Printemps,56,Jeunesse,Distiques,Hexasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+57,735,Automne – Une année de sonnets,Automne,57,Une année de sonnets,,,,False,,matched_by_metadata,collection/titre suffixe,0
+58,750,Hiver – Une année de sonnets,Hiver,58,Une année de sonnets,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+59,765,Printemps – Une année de sonnets,Printemps,59,Une année de sonnets,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+60,780,Eté – Une année de sonnets,Eté,60,Une année de sonnets,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+61,795,Changement,Changement,61,,Distiques,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+62,820,Réunion,Réunion,62,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+63,837,Limousin,Limousin,63,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+64,858,Lemosin,Lemosin,64,,Quatrains,Alexandrin / Plates,Occitan,False,,matched,titre normalis? unique,0
+65,879,Les mots justes,Les mots justes,65,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+66,896,Musicien – Sonnez les métiers,Musicien,66,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+67,911,Architecte – Sonnez les métiers,Architecte,67,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+68,926,Sculpteur – Sonnez les métiers,Sculpteur,68,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+69,941,Photographe – Sonnez les métiers,Photographe,69,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+70,956,Pulsion de rédaction,Pulsion de rédaction,70,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+71,971,Artiste de scène – Sonnez les métiers,Artiste de scène,71,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+72,986,Boulanger – Sonnez les métiers,Boulanger,72,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+73,1001,Songe d’un amant,Songe d’un amant,73,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+74,1016,Bande dessinée – Sonnez les métiers,Bande dessinée,74,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+75,1031,La chenille - jeunesse,La chenille,75,Jeunesse,Distiques,Hexasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+76,1040,Indécision,Indécision,76,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+77,1056,Pâques - jeunesse,Pâques,77,Jeunesse,Quatrains,Octosyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+78,1065,Magicien - jeunesse,Magicien,78,Jeunesse,Distiques,Hexasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+79,1074,Toutou - jeunesse,Toutou,79,Jeunesse,Distiques,Hexasyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+80,1083,Peine de pluie,Peine de pluie,80,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+81,1098,Division,Division,81,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+82,1113,Meet tech,Meet tech,82,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+83,1128,Thesaurus,Thesaurus,83,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+84,1149,Premier mai,Premier mai,84,,Distiques,Octosyllabe / Croisées,Français,False,,matched,titre normalis? unique,22
+85,1151,Munchkin - Jeu,Munchkin,85,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+86,1168,Cri - calligramme,Cri,86,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+87,1192,Aux chandelles - calligramme,Aux chandelles,87,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+88,1216,Sapin - calligramme,Sapin,88,,,,,True,,matched,titre normalis? unique,0
+89,1245,Corde - calligramme,Corde,89,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+90,1274,Sax - calligramme,Sax,90,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+91,1288,Temps - calligramme,Temps,91,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+92,1300,Thé - calligramme,Thé,92,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+93,1312,Il pleut,Il pleut,93,,Tercets,Hexasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+94,1328,Sombre soirée,Sombre soirée,94,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+95,1343,Rencontre,Rencontre,95,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+96,1368,Sensible sonnet,Sensible sonnet,96,,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched,titre normalis? unique,0
+97,1383,Visite,Visite,97,,Distiques,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+98,1426,Quatre ans,Quatre ans,98,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+99,1443,La vie en couleurs,La vie en couleurs,99,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+100,1472,Bord de mer,Bord de mer,100,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+101,1487,Un matin,Un matin,101,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+102,1502,Zombies - Jeu,Zombies,102,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+103,1517,Odyssée,Odyssée,103,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+104,1532,Enceinte - calligramme,Enceinte,104,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+105,1563,Festival,Festival,105,,Quatorzain,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+106,1578,Si on changeait le monde,Si on changeait le monde,106,,Distiques,Hexasyllabe / Croisées,Français,False,,matched,titre normalis? unique,0
+107,1611,Conte,Conte,107,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+108,1626,Devoir de mémoire,Devoir de mémoire,108,,Quatrains,Décasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+109,1655,Jardin,Jardin,109,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+110,1670,Souvenir,Souvenir,110,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+111,1685,Artiste peintre – Sonnez les métiers,Artiste peintre,111,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+112,1700,Home sweet home,Home sweet home,112,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+113,1717,Aube triste,Aube triste,113,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+114,1734,Tendresse,Tendresse,114,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+115,1745,Trajet,Trajet,115,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+116,1766,Prénom,Prénom,116,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+117,1779,Méditation,Méditation,117,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+118,1796,Chat,Chat,118,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+119,1811,Compagnon - jeunesse,Compagnon,119,Jeunesse,Tercets,Octosyllabe / Plates,Français,False,,matched_by_metadata,collection/titre suffixe,0
+120,1827,Morose,Morose,120,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+121,1842,Dérive,Dérive,121,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+122,1859,Treize,Treize,122,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+123,1872,Sourcier,Sourcier,123,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+124,1885,C’est le temps des vacances,C’est le temps des vacances,124,,Quatrains,Hexasyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+125,1916,Costume,Costume,125,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+126,1929,Octorictus,Octorictus,126,,Quatrains,Octosyllabe / Plates,Français,False,,matched,titre normalis? unique,0
+127,1946,Osez la rencontre,Osez la rencontre,127,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+128,1963,Émergence,Émergence,,,,,,False,,unmatched,,0
+129,1978,Locomotion,Locomotion,,,,,,False,,unmatched,,0
+130,1995,Émoi,Émoi,,,,,,False,,unmatched,,0
+131,2012,Promenade,Promenade,,,,,,False,,unmatched,,0
+132,2029,Explosion douteuse,Explosion douteuse,,,,,,False,,unmatched,,0
+133,2042,Écrire,Écrire,,,,,,False,,unmatched,,0
+134,2057,J’ai peur,J’ai peur,,,,,,False,,unmatched,,0
+135,2082,Délit,Délit,,,,,,False,,unmatched,,0
+136,2115,Je vais essayer de parler de moi,Je vais essayer de parler de moi,,,,,,False,,unmatched,,0
+137,2158,Lecture,Lecture,,,,,,False,,unmatched,,0
+138,2175,Octobre – jeunesse,Octobre,,Jeunesse,,,,False,,unmatched,,0
+139,2192,Halloween – jeunesse,Halloween,,Jeunesse,,,,False,,unmatched,,0
+140,2205,Hiver – jeunesse,Hiver,,Jeunesse,,,,False,,unmatched_conflict,ligne CSV d?j? attribu?e ? un texte ant?rieur similaire,0
+141,2218,Musique naturelle,Musique naturelle,,,,,,False,,unmatched,,0
+142,2233,Absurde,Absurde,,,,,,False,,unmatched,,0
+143,2246,Pierre aux sacrifices,Pierre aux sacrifices,,,,,,False,,unmatched,,0
+144,2259,Cerf-volant – calligramme,Cerf-volant – calligramme,142,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+145,2270,Escapade,Escapade,,,,,,False,,unmatched,,0
+146,2291,Qui sommes-nous ?,Qui sommes-nous ?,,,,,,False,,unmatched,,0
+147,2310,Comment,Comment,,,,,,False,,unmatched,,0
+148,2327,Salle d’attente,Salle d’attente,,,,,,False,,unmatched,,0
+149,2348,Noël,Noël,,,,,,False,,unmatched,,0
+150,2365,Étoiles,Étoiles,,,,,,False,,unmatched,,0
+151,2386,Champignons – jeunesse,Champignons,,Jeunesse,,,,False,,unmatched,,0
+152,2405,Loco-émotive,Loco-émotive,,,,,,False,,unmatched,,0
+153,2422,Qu’y a-t-il,Qu’y a-t-il,,,,,,False,,unmatched,,0
+154,2439,Charlot,Charlot,,,,,,False,,unmatched,,0
+155,2456,Le cirque,Le cirque,,,,,,False,,unmatched,,0
+156,2485,Assis,Assis,,,,,,False,,unmatched,,0
+157,2502,CHU-te,CHU-te,,,,,,False,,unmatched,,0
+158,2539,A – Calligramme,A,143,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+159,2552,Camion - jeunesse,Camion,,Jeunesse,,,,False,,unmatched,,0
+160,2565,Voiture - jeunesse,Voiture,,Jeunesse,,,,False,,unmatched,,0
+161,2574,B – calligramme,B,144,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+162,2587,Locomotive – calligramme,Locomotive,145,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+163,2604,Révolver – calligramme,Révolver,146,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+164,2622,Musique – jeunesse,Musique,,Jeunesse,,,,False,,unmatched_conflict,candidat incompatible avec le titre source,0
+165,2635,Télévision -  jeunesse,Télévision,,Jeunesse,,,,False,,unmatched,,0
+166,2650,Les décors,Les décors,,,,,,False,,unmatched,,0
+167,2671,Les costumes,Les costumes,,,,,,False,,unmatched,,0
+168,2692,Ecrans,Ecrans,,,,,,False,,unmatched,,0
+169,2709,Je voudrais être un homme heureux,Je voudrais être un homme heureux,,,,,,False,,unmatched,,0
+170,2731,Cellule,Cellule,,,,,,False,,unmatched,,0
+171,2744,Le jardinier,Le jardinier,,,,,,False,,unmatched,,0
+172,2761,Les accessoires,Les accessoires,,,,,,False,,unmatched,,0
+173,2782,C – calligramme,C,,,,,,True,,unmatched,,0
+174,2795,Est-ce que la vie est un jeu,Est-ce que la vie est un jeu,,,,,,False,,unmatched,,0
+175,2832,"Peine, chagrin, et cætera","Peine, chagrin, et cætera",,,,,,False,,unmatched,,0
+176,2849,Eau – sonnets des éléments,Eau,128,Sonnets des éléments,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+177,2864,Destin,Destin,,,,,,False,,unmatched,,0
+178,2881,"Sécurité, régie, accueil","Sécurité, régie, accueil",,,,,,False,,unmatched,,0
+179,2900,Acteurs,Acteurs,,,,,,False,,unmatched,,0
+180,2921,Boulet,Boulet,,,,,,False,,unmatched,,0
+181,2940,Laissez-moi,Laissez-moi,,,,,,False,,unmatched,,0
+182,2953,Bonne année 2013,Bonne année 2013,,,,,,False,,unmatched,,0
+183,2966,Le secret,Le secret,,,,,,False,,unmatched,,0
+184,2979,Déclaration,Déclaration,,,,,,False,,unmatched,,0
+185,2992,Boutique de jouets,Boutique de jouets,,,,,,False,,unmatched,,0
+186,3031,L’écureuil – jeunesse,L’écureuil,,Jeunesse,,,,False,,unmatched,,0
+187,3040,Dame tortue – jeunesse,Dame tortue,,Jeunesse,,,,False,,unmatched,,0
+188,3049,Dragon affamé – jeunesse,Dragon affamé,,Jeunesse,,,,False,,unmatched,,0
+189,3062,Météo - jeunesse,Météo,,Jeunesse,,,,False,,unmatched,,0
+190,3071,Faisons-le à la main – jeunesse,Faisons-le à la main – jeunesse,,,,,,False,,unmatched,,0
+191,3080,Petite graine – jeunesse,Petite graine,,Jeunesse,,,,False,,unmatched,,0
+192,3101,Chat fou-jeunesse,Chat fou,,Jeunesse,,,,False,,unmatched,,0
+193,3114,Journée ordinaire,Journée ordinaire,,,,,,False,,unmatched,,0
+194,3157,Exceptionnel,Exceptionnel,,,,,,False,,unmatched,,0
+195,3173,Feu – sonnets des éléments,Feu,129,Sonnets des éléments,Sonnet marotique,Alexandrin / Embrassées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+196,3188,Une étoile à la fenêtre,Une étoile à la fenêtre,,,,,,False,,unmatched,,0
+197,3205,Fantasy,Fantasy,,,,,,False,,unmatched,,0
+198,3262,Les mots,Les mots,,,,,,False,,unmatched,,0
+199,3277,S’échapper,S’échapper,,,,,,False,,unmatched,,0
+200,3294,Noël – jeunesse,Noël,,Jeunesse,,,,False,,unmatched,,0
+201,3311,Oppressant,Oppressant,,,,,,False,,unmatched,,0
+202,3324,Il approche,Il approche,,,,,,False,,unmatched,,0
+203,3345,J’aimerais,J’aimerais,,,,,,False,,unmatched,,0
+204,3362,Carrés noirs,Carrés noirs,,,,,,False,,unmatched,,0
+205,3379,Une petite mouche - jeunesse,Une petite mouche,,Jeunesse,,,,False,,unmatched,,0
+206,3392,Le singe - jeunesse,Le singe,,Jeunesse,,,,False,,unmatched,,0
+207,3403,Ecrire,Ecrire,,,,,,False,,unmatched,,0
+208,3420,Le monstre souterrain,Le monstre souterrain,,,,,,False,,unmatched,,0
+209,3437,Ours – calligramme,Ours,147,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+210,3455,Acupuncteur,Acupuncteur,,,,,,False,,unmatched,,0
+211,3472,La peur,La peur,,,,,,False,,unmatched,,0
+212,3489,Crapaud pas beau – jeunesse,Crapaud pas beau,,Jeunesse,,,,False,,unmatched,,0
+213,3498,Le rouge-gorge – jeunesse,Le rouge-gorge – jeunesse,,,,,,False,,unmatched,,0
+214,3507,D – calligramme,D,,,,,,True,,unmatched,,0
+215,3520,E – calligramme,E,,,,,,True,,unmatched,,0
+216,3533,Air – sonnet des éléments,Air,130,Sonnets des éléments,,,,False,,matched_by_metadata,collection/titre suffixe,0
+217,3548,Lire,Lire,,,,,,False,,unmatched,,0
+218,3565,Cannelés,Cannelés,,,,,,False,,unmatched,,0
+219,3586,F – Calligramme,F,148,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+220,3599,Je me suis perdu,Je me suis perdu,,,,,,False,,unmatched,,0
+221,3618,Symptômes,Symptômes,,,,,,False,,unmatched,,0
+222,3635,Un instant,Un instant,,,,,,False,,unmatched,,0
+223,3650,Elle écrit,Elle écrit,,,,,,False,,unmatched,,0
+224,3665,Archéologue – sonnez les métiers,Archéologue,150,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+225,3680,Porte close,Porte close,,,,,,False,,unmatched,,0
+226,3693,Le contrat,Le contrat,,,,,,False,,unmatched,,0
+227,3718,Un escargot au marché - jeunesse,Un escargot au marché,,Jeunesse,,,,False,,unmatched,,0
+228,3729,Posthume,Posthume,,,,,,False,,unmatched,,0
+229,3744,Chocolat,Chocolat,,,,,,False,,unmatched,,0
+230,3755,Bulles et pépiements - jeunesse,Bulles et pépiements,,Jeunesse,,,,False,,unmatched,,0
+231,3768,Aujourd’hui,Aujourd’hui,,,,,,False,,unmatched,,0
+232,3785,Intempéries,Intempéries,,,,,,False,,unmatched,,0
+233,3804,Lueur vague,Lueur vague,,,,,,False,,unmatched,,0
+234,3817,Terre – Sonnet des éléments,Terre,131,Sonnets des éléments,,,,False,,matched_by_metadata,collection/titre suffixe,0
+235,3832,Une fée s’est posée,Une fée s’est posée,,,,,,False,,unmatched,,0
+236,3847,Labyrinthe,Labyrinthe,,,,,,False,,unmatched,,0
+237,3864,Ecrire c’est une histoire,Ecrire c’est une histoire,,,,,,False,,unmatched,,0
+238,3881,Ecrivain,Ecrivain,,,,,,False,,unmatched,,0
+239,3896,Ce soir,Ce soir,,,,,,False,,unmatched,,0
+240,3915,Le compte est bon,Le compte est bon,,,,,,False,,unmatched,,0
+241,3925,Montée,Montée,,,,,,False,,unmatched,,0
+242,3938,"1, 2, 3","1, 2, 3",,,,,,False,,unmatched,,0
+243,3943,Quand la musique,Quand la musique,,,,,,False,,unmatched,,0
+244,3956,Pilote – sonnez les métiers,Pilote,152,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,matched_by_metadata,collection/titre suffixe,0
+245,3971,"Une nuit, une promenade","Une nuit, une promenade",,,,,,False,,unmatched,,0
+246,3984,Ombre d’hiver,Ombre d’hiver,,,,,,False,,unmatched,,0
+247,3999,Entre deux,Entre deux,,,,,,False,,unmatched,,0
+248,4014,Rien,Rien,,,,,,False,,unmatched,,0
+249,4029,Récit de nuit,Récit de nuit,,,,,,False,,unmatched,,0
+250,4046,Le poème est là,Le poème est là,,,,,,False,,unmatched,,0
+251,4061,Abandon,Abandon,,,,,,False,,unmatched,,0
+252,4082,Une nuit secrète,Une nuit secrète,,,,,,False,,unmatched,,0
+253,4099,Quatre pour un,Quatre pour un,,,,,,False,,unmatched,,0
+254,4114,Mégalithes,Mégalithes,,,,,,False,,unmatched,,0
+255,4135,Printemps – jeunesse,Printemps,,Jeunesse,,,,False,,unmatched_conflict,candidat incompatible avec le titre source,0
+256,4148,Effroi,Effroi,,,,,,False,,unmatched,,0
+257,4167,Une rue ensoleillée,Une rue ensoleillée,,,,,,False,,unmatched,,0
+258,4184,Musicale,Musicale,,,,,,False,,unmatched,,0
+259,4197,Giboulées,Giboulées,,,,,,False,,unmatched,,0
+260,4212,Instruments,Instruments,,,,,,False,,unmatched,,0
+261,4229,Parking de nuit,Parking de nuit,,,,,,False,,unmatched,,0
+262,4248,Au bout du conte,Au bout du conte,,,,,,False,,unmatched,,0
+263,4267,En retard,En retard,,,,,,False,,unmatched,,0
+264,4290,La plage,La plage,,,,,,False,,unmatched,,0
+265,4309,Bazar,Bazar,,,,,,False,,unmatched,,0
+266,4325,Muse,Muse,,,,,,False,,unmatched,,0
+267,4342,Nuages,Nuages,,,,,,False,,unmatched,,0
+268,4355,Astre nocturne,Astre nocturne,,,,,,False,,unmatched,,0
+269,4368,Un réveil ordinaire,Un réveil ordinaire,,,,,,False,,unmatched,,0
+270,4385,Déménagement,Déménagement,,,,,,False,,unmatched,,0
+271,4404,Promenade,Promenade,,,,,,False,,unmatched,,0
+272,4419,Clef,Clef,,,,,,False,,unmatched,,0
+273,4440,Méli-mélo de mots,Méli-mélo de mots,,,,,,False,,unmatched,,0
+274,4457,Déambulation,Déambulation,,,,,,False,,unmatched,,0
+275,4486,Matin,Matin,,,,,,False,,unmatched,,0
+276,4501,Un monde sans toi,Un monde sans toi,,,,,,False,,unmatched,,0
+277,4520,C’est juste,C’est juste,,,,,,False,,unmatched,,0
+278,4541,Attente,Attente,,,,,,False,,unmatched,,0
+279,4578,Idée noire,Idée noire,,,,,,False,,unmatched,,0
+280,4591,Type texte,Type texte,,,,,,False,,unmatched,,0
+281,4608,Ruisselant,Ruisselant,,,,,,False,,unmatched,,0
+282,4623,A la tombée,A la tombée,,,,,,False,,unmatched,,0
+283,4636,Paris-calligramme,Paris,,,,,,True,,unmatched,,0
+284,4653,Rand’automne,Rand’automne,,,,,,False,,unmatched,,0
+285,4668,Nuit déserte,Nuit déserte,,,,,,False,,unmatched,,0
+286,4685,Le poème nouveau,Le poème nouveau,,,,,,False,,unmatched,,0
+287,4700,Vingt-cinq,Vingt-cinq,,,,,,False,,unmatched,,0
+288,4717,Soirée d’hiver,Soirée d’hiver,,,,,,False,,unmatched,,0
+289,4730,Tourment,Tourment,,,,,,False,,unmatched,,0
+290,4745,Suspendus,Suspendus,,,,,,False,,unmatched,,0
+291,4758,Foudre,Foudre,,,,,,False,,unmatched,,0
+292,4771,Guten tag,Guten tag,,,,,,False,,unmatched,,0
+293,4784,Gravure,Gravure,,,,,,False,,unmatched,,0
+294,4797,Errance,Errance,,,,,,False,,unmatched,,0
+295,4814,Rêveries,Rêveries,,,,,,False,,unmatched,,0
+296,4831,XXXVI,XXXVI,,,,,,False,,unmatched,,0
+297,4868,Arc-en-ciel annuel,Arc-en-ciel annuel,,,,,,False,,unmatched,,0
+298,4883,« Soiret »,« Soiret »,,,,,,False,,unmatched,,0
+299,4898,Premières fois,Premières fois,,,,,,False,,unmatched,,0
+300,4913,Entre ici et là-bas,Entre ici et là-bas,,,,,,False,,unmatched,,0
+301,4928,Horaires des repas,Horaires des repas,,,,,,False,,unmatched,,0
+302,4941,Détour et retour,Détour et retour,,,,,,False,,unmatched,,0
+303,4958,Un instant,Un instant,,,,,,False,,unmatched,,0
+304,4971,Un poème,Un poème,,,,,,False,,unmatched,,0
+305,4990,Téléphone – Calligramme,Téléphone,149,,Calligramme,Non standard,Français,True,,matched,titre normalis? unique,0
+306,5001,Surprise au réveil,Surprise au réveil,,,,,,False,,unmatched,,0
+307,5014,Sapin – Calligramme,Sapin,,,,,,True,,unmatched_conflict,ligne CSV d?j? attribu?e ? un texte ant?rieur similaire,0
+308,5033,Évasion en lignes,Évasion en lignes,,,,,,False,,unmatched,,0
+309,5052,Nature cachée,Nature cachée,,,,,,False,,unmatched,,0
+310,5065,Centre des mémoires,Centre des mémoires,,,,,,False,,unmatched,,0
+311,5080,Regrets hors délai,Regrets hors délai,,,,,,False,,unmatched,,0
+312,5093,Serveuse-r – Sonnez les métiers,Serveuse-r – Sonnez les métiers,,Sonnez les métiers,Quatrains,Alexandrin / Croisées,Français,False,,unmatched_conflict,candidat incompatible avec le titre source,0
+313,5108,Pour faire un parent…,Pour faire un parent…,,,,,,False,,unmatched,,0
+314,5118,Pi,Pi,,,,,,False,,unmatched,,0
+315,5131,Antinomie,Antinomie,,,,,,False,,unmatched,,0
+316,5148,A côté,A côté,,,,,,False,,unmatched,,0
+317,5163,Eléphant,Eléphant,,,,,,False,,unmatched,,0
+318,5172,En train de l’écrit,En train de l’écrit,,,,,,False,,unmatched,,0
+319,5189,Croisée des amants,Croisée des amants,,,,,,False,,unmatched,,0
+320,5218,Une ville,Une ville,,,,,,False,,unmatched,,0
+321,5238,Éolienne,Éolienne,,,,,,False,,unmatched,,0
+322,5249,Des sens cachés,Des sens cachés,,,,,,False,,unmatched,,0
+323,5262,Progrès,Progrès,,,,,,False,,unmatched,,0
+324,5289,Octobre rose,Octobre rose,,,,,,False,,unmatched,,0
+325,5304,Noël au poupon,Noël au poupon,,,,,,False,,unmatched,,0
+326,5317,Le matin,Le matin,,,,,,False,,unmatched,,0
+327,5332,Prendre le temps,Prendre le temps,,,,,,False,,unmatched,,0
+328,5347,Le temps s’enfuit,Le temps s’enfuit,,,,,,False,,unmatched,,0
+329,5362,Un p’tit coin de parapluie,Un p’tit coin de parapluie,,,,,,False,,unmatched,,0
+330,5375,Marché(s) de Noël,Marché(s) de Noël,,,,,,False,,unmatched,,0
+331,5390,Émoi du pourquoi,Émoi du pourquoi,,,,,,False,,unmatched,,0
+332,5403,Au matin,Au matin,,,,,,False,,unmatched,,0
+333,5424,Juste quelques mots,Juste quelques mots,,,,,,False,,unmatched,,0
+334,5451,Matin,Matin,,,,,,False,,unmatched,,0
+335,5464,Au bout,Au bout,,,,,,False,,unmatched,,0
+336,5497,Deux,Deux,,,,,,False,,unmatched,,0
+337,5518,C’est comme,C’est comme,,,,,,False,,unmatched,,0
+338,5535,Clair de lune,Clair de lune,,,,,,False,,unmatched,,0
+339,5550,L’attente,L’attente,,,,,,False,,unmatched,,0
+340,5565,Sur le départ,Sur le départ,,,,,,False,,unmatched,,0
+341,5580,Bagage,Bagage,,,,,,False,,unmatched,,0
+342,5601,Effet de fée,Effet de fée,,,,,,False,,unmatched,,0
+343,5616,Où,Où,,,,,,False,,unmatched,,0
+344,5631,Après la pluie…,Après la pluie…,,,,,,False,,unmatched,,0
+345,5646,DEFCAR’S,DEFCAR’S,132,,Acrostiche,Non standard,Français,False,,matched,titre normalis? unique,0
+346,5664,A quoi,A quoi,,,,,,False,,unmatched,,0
+347,5679,Une crique,Une crique,,,,,,False,,unmatched,,0
+348,5708,Nébuleux,Nébuleux,,,,,,False,,unmatched,,0
+349,5725,Attendre,Attendre,,,,,,False,,unmatched,,0
+350,5740,Jalouse,Jalouse,,,,,,False,,unmatched,,0
+351,5755,Jeux de plume,Jeux de plume,,,,,,False,,unmatched,,0
+352,5767,Un jour en juin,Un jour en juin,,,,,,False,,unmatched,,0
+353,5782,L’été s’en vient,L’été s’en vient,,,,,,False,,unmatched,,0
+354,5797,Le loup sonne trois fois,Le loup sonne trois fois,,,,,,False,,unmatched,,0
+355,5812,Détail,Détail,,,,,,False,,unmatched,,0
+356,5827,Aux heures dorées,Aux heures dorées,,,,,,False,,unmatched,,0
+357,5844,Gare à l’aléa,Gare à l’aléa,,,,,,False,,unmatched,,0
+358,5859,Les autres,Les autres,,,,,,False,,unmatched,,0
+359,5874,Rentrée litté-rail,Rentrée litté-rail,,,,,,False,,unmatched,,0
+360,5891,Sonnet ! et entrez,Sonnet ! et entrez,,,,,,False,,unmatched,,0
+361,5906,Tournant,Tournant,,,,,,False,,unmatched,,0
+362,5923,Au-dessus des rails,Au-dessus des rails,,,,,,False,,unmatched,,0
+363,5938,Petit peuple ?,Petit peuple ?,,,,,,False,,unmatched,,0
+364,5953,La folie des chars et des gens,La folie des chars et des gens,,,,,,False,,unmatched,,0
+365,5968,Un banc,Un banc,,,,,,False,,unmatched,,0
+366,5983,Soir,Soir,,,,,,False,,unmatched,,0
+367,5993,Intra-cité,Intra-cité,,,,,,False,,unmatched,,0
+368,6010,Ville endormie,Ville endormie,,,,,,False,,unmatched,,0
+369,6025,Paysage,Paysage,,,,,,False,,unmatched,,0
+370,6040,Crime au cœur fondant,Crime au cœur fondant,,,,,,False,,unmatched,,0
+371,6055,Réverbère,Réverbère,,,,,,False,,unmatched,,0
+372,6068,Ru,Ru,,,,,,False,,unmatched,,0
+373,6083,Capter,Capter,,,,,,False,,unmatched,,0
+374,6098,Automne,Automne,,,,,,False,,unmatched_conflict,candidat incompatible avec le titre source,0
+375,6113,Un tour de cadran,Un tour de cadran,,,,,,False,,unmatched,,0
+376,6128,Famille,Famille,,,,,,False,,unmatched,,0
+377,6143,Lycée,Lycée,,,,,,False,,unmatched,,0
+378,6158,Toi sans moi,Toi sans moi,,,,,,False,,unmatched,,0
+379,6175,Hou,Hou,,,,,,False,,unmatched,,0
+380,6194,L’agneau et le loup,L’agneau et le loup,,,,,,False,,unmatched,,0
+381,6207,Dix-cussions et plus,Dix-cussions et plus,,,,,,False,,unmatched,,0
+382,6222,Juste un grain…,Juste un grain…,,,,,,False,,unmatched,,0
+383,6237,De l’autre côté,De l’autre côté,,,,,,False,,unmatched,,0
+384,6252,Un petit banc,Un petit banc,,,,,,False,,unmatched,,0
+385,6267,"Rêver de vivre, vivre et rêver","Rêver de vivre, vivre et rêver",,,,,,False,,unmatched,,0
+386,6282,Magie de Noël,Magie de Noël,,,,,,False,,unmatched,,0
+387,6297,Trébucher,Trébucher,,,,,,False,,unmatched,,0
+388,6312,Oreille,Oreille,,,,,,False,,unmatched,,0
+389,6325,Conjuguer plaire,Conjuguer plaire,,,,,,False,,unmatched,,0
+390,6340,Verbe sans verbe,Verbe sans verbe,,,,,,False,,unmatched,,0
+391,6355,C’est,C’est,,,,,,False,,unmatched,,0
+392,6368,Ploc,Ploc,,,,,,False,,unmatched,,0
+393,6381,Un flocon,Un flocon,,,,,,False,,unmatched,,0
+394,6397,Neige,Neige,,,,,,False,,unmatched,,0
+395,6410,Questions existantes en bleu ciel,Questions existantes en bleu ciel,,,,,,False,,unmatched,,0
+396,6423,Mer-mots,Mer-mots,,,,,,False,,unmatched,,0
+397,6438,Lourd,Lourd,,,,,,False,,unmatched,,0
+398,6453,Juste à côté,Juste à côté,,,,,,False,,unmatched,,0
+399,6468,Courbe droite,Courbe droite,,,,,,False,,unmatched,,0
+400,6499,Résonnante,Résonnante,,,,,,False,,unmatched,,0
+401,6512,Menthe,Menthe,,,,,,False,,unmatched,,0
+402,6533,Escape,Escape,,,,,,False,,unmatched,,0
+403,6548,L’instant d’après,L’instant d’après,,,,,,False,,unmatched,,0
+404,6563,Un soir d’été,Un soir d’été,,,,,,False,,unmatched,,0
+405,6578,Quand les pensées déraillent,Quand les pensées déraillent,,,,,,False,,unmatched,,0
+406,6593,Délicate à strophes,Délicate à strophes,140,,Tercets,Alexandrin / Redoublées,Bilingue,False,,matched,titre normalis? unique,0
+407,6609,Survol,Survol,,,,,,False,,unmatched,,0
+408,6624,Dessous,Dessous,,,,,,False,,unmatched,,0
+409,6639,Couleurs changées,Couleurs changées,,,,,,False,,unmatched,,0
+410,6652,Le silence du frigo,Le silence du frigo,,,,,,False,,unmatched,,0
+411,6667,Retour ce soir,Retour ce soir,,,,,,False,,unmatched,,0
+412,6680,Il est temps,Il est temps,,,,,,False,,unmatched,,0
+413,6695,Appareil photo – calligramme,Appareil photo,,,,,,True,,unmatched,,0
+414,6709,The lonely house,The lonely house,,,,,,False,,unmatched,,0
+415,6724,Bande originale,Bande originale,,,,,,False,,unmatched,,0
+416,6739,Fêtes,Fêtes,,,,,,False,,unmatched,,0
+417,6753,Liberté,Liberté,,,,,,False,,unmatched,,0
+418,6768,Liberty,Liberty,,,,,,False,,unmatched,,0
+419,6791,"Passé, présent, futur","Passé, présent, futur",,,,,,False,,unmatched,,0
+420,6810,Sommeil imprudent,Sommeil imprudent,,,,,,False,,unmatched,,0
+421,6844,Non écrit,Non écrit,,,,,,False,,unmatched,,0
+422,6857,Le nez en l’air,Le nez en l’air,,,,,,False,,unmatched,,0
+423,6870,Run over and overrun,Run over and overrun,,,,,,False,,unmatched,,0
+424,6885,Sourire,Sourire,,,,,,False,,unmatched,,0
+425,6922,Coquillages et crustacés,Coquillages et crustacés,,,,,,False,,unmatched,,0
+426,6937,Promenade,Promenade,,,,,,False,,unmatched,,0
+427,6952,Jouer la vie,Jouer la vie,,,,,,False,,unmatched,,0
+428,6962,Nature envie,Nature envie,,,,,,False,,unmatched,,0
+429,6977,Au fil du vent,Au fil du vent,,,,,,False,,unmatched,,0
+430,6987,Semblable à la vie,Semblable à la vie,,,,,,False,,unmatched,,0
+431,7003,Capitaine,Capitaine,,,,,,False,,unmatched,,0
+432,7018,Le sel de la vie,Le sel de la vie,,,,,,False,,unmatched,,0
+433,7033,Au bout du quai,Au bout du quai,,,,,,False,,unmatched,,0
+434,7048,Matin,Matin,,,,,,False,,unmatched,,0
+435,7063,Danse d’étoiles,Danse d’étoiles,,,,,,False,,unmatched,,0
+436,7076,D’eau chaude et d’amitié,D’eau chaude et d’amitié,,,,,,False,,unmatched,,0
+437,7091,Distiques de fées,Distiques de fées,,,,,,False,,unmatched,,0
+438,7108,La chaise,La chaise,,,,,,False,,unmatched,,0
+439,7124,Étincelles,Étincelles,,,,,,False,,unmatched,,0
+440,7139,Ce jour là de fête,Ce jour là de fête,,,,,,False,,unmatched,,0
+441,7154,Fable en larme,Fable en larme,,,,,,False,,unmatched,,0
+442,7169,Coulée verte (et autres couleurs),Coulée verte (et autres couleurs),,,,,,False,,unmatched,,0
+443,7190,**Emmêlé**·e·s,**Emmêlé**·e·s,,,,,,False,,unmatched,,0
+444,7205,Souvenir(s),Souvenir(s),,,,,,False,,unmatched,,0
+445,7220,La vie buissonnière,La vie buissonnière,,,,,,False,,unmatched,,0
+446,7235,Battons-nous en retraite !,Battons-nous en retraite !,,,,,,False,,unmatched,,0
+447,7250,Entre hier et demain,Entre hier et demain,,,,,,False,,unmatched,,0
+448,7265,Eden,Eden,,,,,,False,,unmatched,,0
+449,7280,L’être à faire,L’être à faire,,,,,,False,,unmatched,,0
+450,7295,Auto-lib’,Auto-lib’,,,,,,False,,unmatched,,0
+451,7310,Moon,Moon,,,,,,False,,unmatched,,0
+452,7325,Tempête,Tempête,,,,,,False,,unmatched,,0
+453,7340,Livre,Livre,,,,,,False,,unmatched,,0
+454,7355,Nature assise,Nature assise,,,,,,False,,unmatched,,0
+455,7370,Tourne,Tourne,,,,,,False,,unmatched,,0
+456,7385,JL,JL,,,,,,False,,unmatched,,0
+457,7400,Ils sont deux,Ils sont deux,,,,,,False,,unmatched,,0
+458,7417,Disque d’une nuit,Disque d’une nuit,,,,,,False,,unmatched,,0
+459,7432,À ça je n’y crois pas,À ça je n’y crois pas,,,,,,False,,unmatched,,0
+460,7449,Colorée,Colorée,,,,,,False,,unmatched,,0
+461,7462,Musicalité,Musicalité,,,,,,False,,unmatched,,0
+462,7477,Le temps s’arrête,Le temps s’arrête,,,,,,False,,unmatched,,0
+463,7492,« Mais je l’aime »,« Mais je l’aime »,,,,,,False,,unmatched,,0
+464,7507,Histoire de pierres,Histoire de pierres,,,,,,False,,unmatched,,0
+465,7522,Ding-dong,Ding-dong,,,,,,False,,unmatched,,0
+466,7537,La laisse,La laisse,,,,,,False,,unmatched,,0
+467,7552,Planches,Planches,,,,,,False,,unmatched,,0
+468,7565,Façades,Façades,,,,,,False,,unmatched,,0
+469,7582,Données,Données,,,,,,False,,unmatched,,0
+470,7597,jaune,jaune,,,,,,False,,unmatched,,0
+471,7616,C’est pour rire,C’est pour rire,,,,,,False,,unmatched,,0
+472,7633,Inné-galité,Inné-galité,,,,,,False,,unmatched,,0
+473,7648,Image-i-nation,Image-i-nation,,,,,,False,,unmatched,,0
+474,7663,"Son corps, Son choix","Son corps, Son choix",,,,,,False,,unmatched,,0
+475,7676,Ada Lovelace,Ada Lovelace,139,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+476,7691,Rosa Parks,Rosa Parks,133,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+477,7706,Scrutin sans fin,Scrutin sans fin,,,,,,False,,unmatched,,0
+478,7721,Katherine Johnson,Katherine Johnson,134,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+479,7736,Marie Curie,Marie Curie,135,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+480,7751,Amélia Earhart,Amélia Earhart,136,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+481,7766,Elizabeth Maggie,Elizabeth Maggie,137,,Quatrains,Alexandrin / Plates,Français,False,,matched,titre normalis? unique,0
+482,7781,Hedy Lamarr,Hedy Lamarr,138,,Quatrains,Alexandrin / Croisées,Français,False,,matched,titre normalis? unique,0
+483,7796,Hasard de l'aérogare,Hasard de l'aérogare,,,,,,False,,unmatched,,0
+484,7815,Actes manqués,Actes manqués,,,,,,False,,unmatched,,0
+485,7840,Retour en mots,Retour en mots,,,,,,False,,unmatched,,0
+486,7853,Tant qu’il y aura,Tant qu’il y aura,,,,,,False,,unmatched,,0
+487,7866,Ton invitation,Ton invitation,,,,,,False,,unmatched,,0
+488,7896,Non,Non,,,,,,False,,unmatched,,0
+489,7912,Library,Library,141,,Quatrains,Décasyllabe / Croisées,Anglais,False,,matched,titre normalis? unique,0
+490,7928,La première fois,La première fois,,,,,,False,,unmatched,,0
+491,7944,Résister,Résister,,,,,,False,,unmatched,,0
+492,7960,Une feuille,Une feuille,,,,,,False,,unmatched,,0
+493,7982,Pois,Pois,,,,,,False,,unmatched,,0
+494,8000,Combien d’histoires ?,Combien d’histoires ?,,,,,,False,,unmatched,,0

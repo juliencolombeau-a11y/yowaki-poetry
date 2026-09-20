@@ -1,0 +1,31 @@
+{
+  "name": "yowaki-poetry",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "data:export": "node scripts/export-poems-data.mjs",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "@nuxthub/core": "^0.10.8",
+    "@nuxtjs/cloudinary": "^4.0.0",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
+    "nuxt-auth-utils": "^0.5.30",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "nuxt": "^4.5.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0",
+    "vue-tsc": "^3.2.9",
+    "vuetify": "^4.2.1",
+    "vuetify-nuxt-module": "^1.0.0-rc.6"
+  }
+}
