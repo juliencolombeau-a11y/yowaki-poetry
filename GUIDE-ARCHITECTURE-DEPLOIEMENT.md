@@ -217,7 +217,8 @@ Tester les autorisations avec trois profils : visiteur non connecté, éditeur e
 2. Vérifier que `.env`, `.data`, `.output` et `node_modules` sont ignorés.
 3. Vérifier l'absence de secrets dans l'historique et dans le diff.
 4. Vérifier que `package-lock.json` correspond à `package.json`.
-5. Pousser une branche ou un commit identifiable.
+5. Configurer le workflow `.github/workflows/deploy.yml`.
+6. Pousser une branche ou un commit identifiable.
 
 ### Préparer Cloudflare
 
@@ -226,6 +227,23 @@ Tester les autorisations avec trois profils : visiteur non connecté, éditeur e
 3. Configurer les variables et secrets dans l'environnement **Production**.
 4. Vérifier que le projet Cloudflare utilise le bon dépôt GitHub et la bonne branche.
 5. vérifier que le binding généré est unique et nommé `DB`.
+
+### Déploiement automatique avec GitHub Actions
+
+Le workflow `.github/workflows/deploy.yml` se déclenche sur chaque push vers `main` et peut aussi être lancé manuellement depuis l'onglet **Actions** de GitHub. Il effectue le typecheck, le build avec le preset `cloudflare_module`, puis `wrangler deploy`.
+
+Créer un environnement GitHub nommé `Production`, puis ajouter :
+
+| Emplacement | Nom | Valeur |
+| --- | --- | --- |
+| Variable d'environnement | `CLOUDFLARE_D1_DATABASE_ID` | `ded74873-48b4-4a92-b5f6-1d8137f99e6b` |
+| Variable d'environnement | `CLOUDINARY_CLOUD_NAME` | nom public du cloud Cloudinary |
+| Secret | `CLOUDFLARE_ACCOUNT_ID` | identifiant du compte Cloudflare |
+| Secret | `CLOUDFLARE_API_TOKEN` | token Cloudflare limité au déploiement Workers |
+
+Le token doit disposer au minimum du droit **Account - Workers Scripts - Edit** ainsi que de la lecture du compte nécessaire à Wrangler. Le modèle de token **Edit Cloudflare Workers** convient généralement. Ne jamais mettre les secrets Cloudinary ou de session dans le dépôt : ils restent configurés dans Cloudflare Production.
+
+Après configuration, un push vers `main` doit créer une exécution `Deploy to Cloudflare Workers` dans GitHub Actions. Le déploiement peut être relancé avec **Run workflow** sans nouveau commit.
 
 ### Construire et vérifier
 
