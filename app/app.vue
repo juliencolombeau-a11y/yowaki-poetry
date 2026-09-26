@@ -2,7 +2,7 @@
 useHead({
   titleTemplate: '%s | Yowaki - créations diverses',
   meta: [
-    { name: 'theme-color', content: '#3f2f4f' },
+    { name: 'theme-color', content: '#A84618' },
     { name: 'description', content: 'Quelques créations au fil du criterium.' },
   ],
 })

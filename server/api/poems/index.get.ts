@@ -1,4 +1,4 @@
-import { and, asc, count, desc, eq, exists, inArray, like, or } from 'drizzle-orm'
+import { and, asc, count, desc, eq, exists, inArray, isNull, like, or } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 
 const pageSize = 24
@@ -42,9 +42,25 @@ export default defineEventHandler(async (event) => {
     query.calligram === 'true' ? eq(schema.poems.isCalligram, true) : undefined,
   ].filter(Boolean)
   const where = filters.length > 0 ? and(...filters) : undefined
+  const isTitleSort = sort === 'title-asc' || sort === 'title-desc'
 
   const [poems, countRows] = await Promise.all([
-    db
+    (isTitleSort
+      ? db
+        .select({
+          id: schema.poems.id,
+          documentOrder: schema.poems.documentOrder,
+          title: schema.poems.title,
+          excerpt: schema.poems.excerpt,
+          collection: schema.poems.collection,
+          form: schema.poems.form,
+          meter: schema.poems.meter,
+          rhymeScheme: schema.poems.rhymeScheme,
+          isCalligram: schema.poems.isCalligram,
+        })
+        .from(schema.poems)
+        .where(where)
+      : db
       .select({
         id: schema.poems.id,
         documentOrder: schema.poems.documentOrder,
@@ -59,23 +75,28 @@ export default defineEventHandler(async (event) => {
       .from(schema.poems)
       .where(where)
       .orderBy(
-        sort === 'title-asc'
-          ? asc(schema.poems.title)
-          : sort === 'title-desc'
-            ? desc(schema.poems.title)
-            : sort === 'date-asc'
-              ? asc(schema.poems.creationDate)
-              : desc(schema.poems.creationDate),
-        desc(schema.poems.createdAt),
-        asc(schema.poems.documentOrder),
+        asc(isNull(schema.poems.creationDate)),
+        sort === 'date-asc' ? asc(schema.poems.creationDate) : desc(schema.poems.creationDate),
+        sort === 'date-asc' ? asc(schema.poems.documentOrder) : desc(schema.poems.documentOrder),
       )
       .limit(pageSize)
-      .offset(offset),
+      .offset(offset)),
     db.select({ total: count() }).from(schema.poems).where(where),
   ])
 
+  const collator = new Intl.Collator('fr', { sensitivity: 'base', numeric: true })
+  const sortedPoems = isTitleSort
+    ? poems
+      .sort((left, right) => {
+        const titleOrder = collator.compare(left.title, right.title)
+        const order = titleOrder || left.documentOrder - right.documentOrder
+        return sort === 'title-desc' ? -order : order
+      })
+      .slice(offset, offset + pageSize)
+    : poems
+
   const total = countRows[0]?.total ?? 0
-  const languages = poems.length > 0
+  const languages = sortedPoems.length > 0
     ? await db
         .select({
           poemId: schema.poemLanguages.poemId,
@@ -83,7 +104,7 @@ export default defineEventHandler(async (event) => {
         })
         .from(schema.poemLanguages)
         .innerJoin(schema.languages, eq(schema.languages.id, schema.poemLanguages.languageId))
-        .where(inArray(schema.poemLanguages.poemId, poems.map((poem) => poem.id)))
+        .where(inArray(schema.poemLanguages.poemId, sortedPoems.map((poem) => poem.id)))
     : []
 
   const languagesByPoem = new Map<number, string[]>()
@@ -93,7 +114,7 @@ export default defineEventHandler(async (event) => {
     languagesByPoem.set(item.poemId, names)
   }
 
-  const images = poems.length > 0
+  const images = sortedPoems.length > 0
     ? await db
         .select({
           poemId: schema.media.poemId,
@@ -102,7 +123,7 @@ export default defineEventHandler(async (event) => {
         })
         .from(schema.media)
         .where(and(
-          inArray(schema.media.poemId, poems.map((poem) => poem.id)),
+          inArray(schema.media.poemId, sortedPoems.map((poem) => poem.id)),
           eq(schema.media.kind, 'image'),
         ))
     : []
@@ -110,7 +131,7 @@ export default defineEventHandler(async (event) => {
   const imagesByPoem = new Map(images.map((image) => [image.poemId, image]))
 
   return {
-    data: poems.map((poem) => ({
+    data: sortedPoems.map((poem) => ({
       ...poem,
       languages: languagesByPoem.get(poem.id) ?? [],
       image: imagesByPoem.get(poem.id) ?? null,

@@ -26,6 +26,26 @@ export default defineNuxtConfig({
     moduleOptions: {
       prefixComposables: ['useLayout'],
     },
+    vuetifyOptions: {
+      theme: {
+        defaultTheme: 'light',
+        themes: {
+          light: {
+            dark: false,
+            colors: {
+              primary: '#A84618',
+              secondary: '#5E6260',
+              background: '#F4EFE4',
+              surface: '#FAF8F3',
+              'on-background': '#292A29',
+              'on-surface': '#292A29',
+              'on-primary': '#FFFFFF',
+              'on-secondary': '#FFFFFF',
+            },
+          },
+        },
+      },
+    },
   },
   runtimeConfig: {
     cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,

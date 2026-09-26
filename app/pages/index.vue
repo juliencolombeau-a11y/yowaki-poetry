@@ -39,6 +39,7 @@ const language = ref('')
 const calligram = ref(false)
 const sort = ref('date-desc')
 const page = ref(1)
+const filtersExpanded = ref(false)
 
 const { data: references } = await useFetch<ReferencesResponse>('/api/poems/references')
 const query = computed(() => ({
@@ -82,12 +83,13 @@ useSeoMeta({
 <template>
   <main>
     <section class="mb-8">
-      <div class="banner-placeholder mb-6" aria-label="Bandeau Yowaki">
-        <div>
-          <h1 class="text-h3 text-sm-h2">Yowaki - créations diverses</h1>
-          <p class="text-h6 mt-2 mb-0">Quelques créations au fil du criterium</p>
-        </div>
-      </div>
+      <v-img
+        src="https://res.cloudinary.com/dqc9sksg/image/upload/c_crop,w_1920,h_540,x_0,y_150/v1790426661/Bandeau_site_de_po%C3%A8mes_Yowaki.png"
+        alt="Yowaki - créations diverses"
+        :aspect-ratio="32 / 9"
+        cover
+        rounded="xl"
+      />
     </section>
 
     <v-text-field
@@ -102,36 +104,55 @@ useSeoMeta({
 
     <v-card variant="tonal" class="mb-8">
       <v-card-text>
-        <v-row align="center">
-          <v-col cols="12" sm="4">
-            <v-select v-model="collection" :items="references?.collections" label="Collection" clearable hide-details />
-          </v-col>
-          <v-col cols="12" sm="4">
-            <v-select v-model="form" :items="references?.forms" label="Forme" clearable hide-details />
-          </v-col>
-          <v-col cols="12" sm="4">
-            <v-select v-model="language" :items="references?.languages" label="Langue" clearable hide-details />
-          </v-col>
-        </v-row>
-        <v-row align="center" class="mt-1">
-          <v-col cols="12" sm="4">
-            <v-checkbox v-model="calligram" label="Calligrammes" hide-details class="calligram-filter" />
-          </v-col>
-          <v-col cols="12" sm="8">
-            <v-select v-model="sort" :items="[
-              { title: 'Plus récent → plus ancien', value: 'date-desc' },
-              { title: 'Plus ancien → plus récent', value: 'date-asc' },
-              { title: 'Nom (A-Z)', value: 'title-asc' },
-              { title: 'Nom (Z-A)', value: 'title-desc' },
-            ]" label="Trier par" hide-details />
-          </v-col>
-        </v-row>
-        <v-btn variant="text" prepend-icon="mdi-filter-off" @click="clearFilters">Réinitialiser</v-btn>
+        <v-btn
+          variant="text"
+          block
+          class="justify-space-between"
+          :aria-expanded="filtersExpanded"
+          aria-controls="poem-filters"
+          :append-icon="filtersExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          @click="filtersExpanded = !filtersExpanded"
+        >
+          Filtres
+        </v-btn>
+        <v-expand-transition>
+          <div v-show="filtersExpanded" id="poem-filters">
+            <v-row align="center" class="mt-1">
+              <v-col cols="12" sm="4">
+                <v-select v-model="collection" :items="references?.collections" label="Collection" clearable hide-details />
+              </v-col>
+              <v-col cols="12" sm="4">
+                <v-select v-model="form" :items="references?.forms" label="Forme" clearable hide-details />
+              </v-col>
+              <v-col cols="12" sm="4">
+                <v-select v-model="language" :items="references?.languages" label="Langue" clearable hide-details />
+              </v-col>
+            </v-row>
+            <v-row align="center" class="mt-1">
+              <v-col cols="12" sm="4">
+                <v-checkbox v-model="calligram" label="Calligrammes" hide-details class="calligram-filter" />
+              </v-col>
+              <v-col cols="12" sm="8">
+                <v-select v-model="sort" :items="[
+                  { title: 'Date : plus récent → plus ancien', value: 'date-desc' },
+                  { title: 'Date : plus ancien → plus récent', value: 'date-asc' },
+                  { title: 'Nom (A-Z)', value: 'title-asc' },
+                  { title: 'Nom (Z-A)', value: 'title-desc' },
+                ]" label="Trier par" hide-details />
+              </v-col>
+              <v-col cols="12" class="pt-0">
+                <p class="text-caption text-medium-emphasis mb-0">
+                  Les poèmes sans date sont triés selon leur ordre dans le recueil.
+                </p>
+              </v-col>
+            </v-row>
+            <v-btn variant="text" prepend-icon="mdi-filter-off" @click="clearFilters">Réinitialiser</v-btn>
+          </div>
+        </v-expand-transition>
       </v-card-text>
     </v-card>
 
     <div class="d-flex align-center justify-space-between mb-4">
-      <h2 class="text-h5">Les poèmes</h2>
       <span class="text-body-2 text-medium-emphasis">{{ response?.pagination.total ?? 0 }} résultat(s)</span>
     </div>
 
@@ -176,16 +197,6 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.banner-placeholder {
-  min-height: 150px;
-  border: 2px dashed rgba(var(--v-theme-primary), 0.45);
-  border-radius: 24px;
-  display: grid;
-  place-items: center;
-  color: rgb(var(--v-theme-primary));
-  background: rgba(var(--v-theme-primary), 0.06);
-}
-
 .calligram-filter :deep(.v-label) {
   white-space: nowrap;
 }
