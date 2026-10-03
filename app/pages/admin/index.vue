@@ -29,6 +29,7 @@ interface EditablePoem extends AdminPoem {
   stanza: string | null
   meter: string | null
   rhymeScheme: string | null
+  languages: string[]
   creationDate: string | null
   notes: string | null
   media: Array<{
@@ -53,7 +54,7 @@ interface AdminPoemsResponse {
 interface ReferencesResponse {
   collections: string[]
   forms: string[]
-  stanzas: string[]
+  themes: string[]
   meters: string[]
   rhymeSchemes: string[]
   languages: string[]
@@ -109,6 +110,7 @@ const newPoem = ref({
   stanza: null as string | null,
   meter: null as string | null,
   rhymeScheme: null as string | null,
+  languages: [] as string[],
   notes: null as string | null,
   isCalligram: false,
 })
@@ -138,6 +140,7 @@ function openCreateDialog() {
     stanza: null,
     meter: null,
     rhymeScheme: null,
+    languages: [],
     notes: null,
     isCalligram: false,
   }
@@ -357,10 +360,11 @@ useSeoMeta({
             <v-row>
               <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.collection" :items="references?.collections" label="Collection" clearable /></v-col>
               <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.form" :items="references?.forms" label="Forme" clearable /></v-col>
-              <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.stanza" :items="references?.stanzas" label="Strophe" clearable /></v-col>
+              <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.stanza" :items="references?.themes" label="Thème" clearable /></v-col>
               <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.meter" :items="references?.meters" label="Métrique" clearable /></v-col>
             </v-row>
             <v-combobox v-model="selectedPoem.rhymeScheme" :items="references?.rhymeSchemes" label="Schéma de rimes" clearable />
+            <v-combobox v-model="selectedPoem.languages" :items="references?.languages" label="Langue(s)" multiple chips clearable />
             <v-textarea v-model="selectedPoem.notes" label="Notes publiques" rows="4" clearable />
             <v-checkbox v-model="selectedPoem.isCalligram" label="Calligramme" />
             <v-btn color="primary" :loading="saving" @click="savePoem">Enregistrer</v-btn>
@@ -425,10 +429,11 @@ useSeoMeta({
           <v-row>
             <v-col cols="12" sm="6"><v-combobox v-model="newPoem.collection" :items="references?.collections" label="Collection" clearable /></v-col>
             <v-col cols="12" sm="6"><v-combobox v-model="newPoem.form" :items="references?.forms" label="Forme" clearable /></v-col>
-            <v-col cols="12" sm="6"><v-combobox v-model="newPoem.stanza" :items="references?.stanzas" label="Strophe" clearable /></v-col>
+            <v-col cols="12" sm="6"><v-combobox v-model="newPoem.stanza" :items="references?.themes" label="Thème" clearable /></v-col>
             <v-col cols="12" sm="6"><v-combobox v-model="newPoem.meter" :items="references?.meters" label="Métrique" clearable /></v-col>
           </v-row>
           <v-combobox v-model="newPoem.rhymeScheme" :items="references?.rhymeSchemes" label="Schéma de rimes" clearable />
+          <v-combobox v-model="newPoem.languages" :items="references?.languages" label="Langue(s)" multiple chips clearable />
           <v-textarea v-model="newPoem.notes" label="Notes publiques" rows="4" clearable />
           <v-checkbox v-model="newPoem.isCalligram" label="Calligramme" />
         </v-card-text>

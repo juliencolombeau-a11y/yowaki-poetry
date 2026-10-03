@@ -48,7 +48,7 @@ useSeoMeta({
       <div class="d-flex flex-wrap ga-2 mb-8">
         <v-chip v-if="poem.collection">{{ poem.collection }}</v-chip>
         <v-chip v-if="poem.form" variant="outlined">{{ poem.form }}</v-chip>
-        <v-chip v-if="poem.stanza" variant="outlined">{{ poem.stanza }}</v-chip>
+        <v-chip v-if="poem.stanza" variant="outlined">Thème : {{ poem.stanza }}</v-chip>
         <v-chip v-if="poem.meter" variant="outlined">{{ poem.meter }}</v-chip>
         <v-chip v-if="poem.rhymeScheme" variant="outlined">{{ poem.rhymeScheme }}</v-chip>
         <v-chip v-for="language in poem.languages" :key="language" variant="outlined">{{ language }}</v-chip>

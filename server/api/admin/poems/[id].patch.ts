@@ -1,6 +1,7 @@
 import { eq } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 import { requireAdmin } from '../../../utils/auth'
+import { normalizePoemLanguages, replacePoemLanguages } from '../../../utils/poem-languages'
 
 const nullableTextFields = [
   'excerpt',
@@ -26,6 +27,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 422, statusMessage: 'Données de poème invalides.' })
   }
 
+  const languages = body.languages === undefined ? undefined : normalizePoemLanguages(body.languages)
   const values: Partial<typeof schema.poems.$inferInsert> = {
     updatedAt: new Date(),
   }
@@ -70,6 +72,10 @@ export default defineEventHandler(async (event) => {
 
   if (!poem) {
     throw createError({ statusCode: 404, statusMessage: 'Poème introuvable.' })
+  }
+
+  if (languages !== undefined) {
+    await replacePoemLanguages(id, languages)
   }
 
   return poem

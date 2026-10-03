@@ -32,6 +32,15 @@ interface ReferencesResponse {
   languages: string[]
 }
 
+interface Suggestion {
+  id: number
+  title: string
+  image: {
+    url: string
+    originalFilename: string | null
+  }
+}
+
 const search = ref('')
 const collection = ref('')
 const form = ref('')
@@ -42,6 +51,9 @@ const page = ref(1)
 const filtersExpanded = ref(false)
 
 const { data: references } = await useFetch<ReferencesResponse>('/api/poems/references')
+const { data: suggestions, error: suggestionsError } = await useFetch<Suggestion[]>('/api/poems/suggestions', {
+  default: () => [],
+})
 const query = computed(() => ({
   search: search.value || undefined,
   collection: collection.value || undefined,
@@ -92,9 +104,39 @@ useSeoMeta({
       />
     </section>
 
+    <section class="mb-8" aria-labelledby="suggestions-title">
+      <h2 id="suggestions-title" class="text-h4 mb-4">Suggestions</h2>
+      <v-alert v-if="suggestionsError" type="error" variant="tonal" class="mb-4">
+        Impossible de charger les suggestions.
+      </v-alert>
+      <v-alert v-else-if="suggestions?.length === 0" type="info" variant="tonal" class="mb-4">
+        Aucune suggestion pour le moment : ajoutez une illustration à un poème depuis l’administration.
+      </v-alert>
+      <v-row v-else>
+        <v-col v-for="poem in suggestions" :key="poem.id" cols="12" sm="6" lg="4">
+          <v-card class="h-100 d-flex flex-column" rounded="xl" elevation="2">
+            <v-card-item>
+              <v-card-title class="text-wrap">{{ poem.title }}</v-card-title>
+            </v-card-item>
+            <v-img
+              :src="poem.image.url"
+              :alt="poem.image.originalFilename || poem.title"
+              height="240"
+              contain
+            />
+            <v-card-actions class="mt-auto">
+              <v-btn :to="`/poems/${poem.id}`" color="primary" variant="text" append-icon="mdi-arrow-right">
+                Lire le poème
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </section>
+
     <v-text-field
       v-model="search"
-      label="Rechercher un poème"
+      label="Rechercher"
       placeholder="Titre, texte ou collection"
       prepend-inner-icon="mdi-magnify"
       clearable
@@ -139,11 +181,6 @@ useSeoMeta({
                   { title: 'Nom (A-Z)', value: 'title-asc' },
                   { title: 'Nom (Z-A)', value: 'title-desc' },
                 ]" label="Trier par" hide-details />
-              </v-col>
-              <v-col cols="12" class="pt-0">
-                <p class="text-caption text-medium-emphasis mb-0">
-                  Les poèmes sans date sont triés selon leur ordre dans le recueil.
-                </p>
               </v-col>
             </v-row>
             <v-btn variant="text" prepend-icon="mdi-filter-off" @click="clearFilters">Réinitialiser</v-btn>

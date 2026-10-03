@@ -1,6 +1,7 @@
 import { desc } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 import { requireAdmin } from '../../../utils/auth'
+import { normalizePoemLanguages, replacePoemLanguages } from '../../../utils/poem-languages'
 
 function nullableText(value: unknown): string | null {
   if (value === null || value === undefined) {
@@ -25,6 +26,8 @@ export default defineEventHandler(async (event) => {
   if (body.isCalligram !== undefined && typeof body.isCalligram !== 'boolean') {
     throw createError({ statusCode: 422, statusMessage: 'Le champ calligramme est invalide.' })
   }
+
+  const languages = body.languages === undefined ? undefined : normalizePoemLanguages(body.languages)
 
   const [lastPoem] = await db
     .select({ documentOrder: schema.poems.documentOrder })
@@ -53,6 +56,14 @@ export default defineEventHandler(async (event) => {
       updatedAt: now,
     })
     .returning()
+
+  if (!poem) {
+    throw createError({ statusCode: 500, statusMessage: 'Impossible de créer le poème.' })
+  }
+
+  if (languages !== undefined) {
+    await replacePoemLanguages(poem.id, languages)
+  }
 
   setResponseStatus(event, 201)
   return poem

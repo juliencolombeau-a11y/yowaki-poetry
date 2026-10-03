@@ -2,7 +2,7 @@ import { asc, isNotNull } from 'drizzle-orm'
 import { db, schema } from 'hub:db'
 
 export default defineEventHandler(async () => {
-  const [collections, forms, stanzas, meters, rhymeSchemes, languages] = await Promise.all([
+  const [collections, forms, themes, meters, rhymeSchemes, languages] = await Promise.all([
     db
       .selectDistinct({ value: schema.poems.collection })
       .from(schema.poems)
@@ -37,7 +37,7 @@ export default defineEventHandler(async () => {
   return {
     collections: collections.map((item) => item.value).filter((value): value is string => Boolean(value)),
     forms: forms.map((item) => item.value).filter((value): value is string => Boolean(value)),
-    stanzas: stanzas.map((item) => item.value).filter((value): value is string => Boolean(value)),
+    themes: themes.map((item) => item.value).filter((value): value is string => Boolean(value)),
     meters: meters.map((item) => item.value).filter((value): value is string => Boolean(value)),
     rhymeSchemes: rhymeSchemes.map((item) => item.value).filter((value): value is string => Boolean(value)),
     languages: languages.map((item) => item.value),
