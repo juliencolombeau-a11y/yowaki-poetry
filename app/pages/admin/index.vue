@@ -16,6 +16,7 @@ interface AdminPoem {
   id: number
   documentOrder: number
   title: string
+  contentType: 'poem' | 'document'
   collection: string | null
   form: string | null
   isCalligram: boolean
@@ -105,6 +106,8 @@ const createDialog = ref(false)
 const newPoem = ref({
   title: '',
   body: '',
+  excerpt: null as string | null,
+  contentType: 'poem' as 'poem' | 'document',
   collection: null as string | null,
   form: null as string | null,
   stanza: null as string | null,
@@ -135,6 +138,8 @@ function openCreateDialog() {
   newPoem.value = {
     title: '',
     body: '',
+    excerpt: null,
+    contentType: 'poem',
     collection: null,
     form: null,
     stanza: null,
@@ -275,7 +280,7 @@ useSeoMeta({
         <h1 class="text-h3">Bienvenue</h1>
       </div>
       <div class="d-flex flex-wrap ga-3">
-        <v-btn color="primary" prepend-icon="mdi-plus" @click="openCreateDialog">Nouveau poème</v-btn>
+        <v-btn color="primary" prepend-icon="mdi-plus" @click="openCreateDialog">Nouvelle ressource</v-btn>
         <v-btn variant="outlined" prepend-icon="mdi-logout" @click="logout">Se déconnecter</v-btn>
       </div>
     </div>
@@ -327,10 +332,10 @@ useSeoMeta({
     <v-row v-else>
       <v-col cols="12" md="5">
         <v-card>
-          <v-card-title>Poèmes ({{ poemsResponse?.pagination.total ?? 0 }})</v-card-title>
+          <v-card-title>Ressources ({{ poemsResponse?.pagination.total ?? 0 }})</v-card-title>
           <v-table density="comfortable" fixed-header height="70vh">
             <thead>
-              <tr><th>Ordre</th><th>Titre</th><th>Collection</th><th>Forme</th></tr>
+              <tr><th>Ordre</th><th>Titre</th><th>Type</th><th>Collection</th><th>Forme</th></tr>
             </thead>
             <tbody>
             <tr
@@ -341,6 +346,7 @@ useSeoMeta({
             >
               <td>{{ poem.documentOrder }}</td>
               <td>{{ poem.title }}</td>
+              <td>{{ poem.contentType === 'document' ? 'PDF' : 'Poème' }}</td>
               <td>{{ poem.collection || '—' }}</td>
               <td>{{ poem.form || '—' }}</td>
             </tr>
@@ -354,9 +360,24 @@ useSeoMeta({
           <v-card-title>Modifier « {{ selectedPoem.title }} »</v-card-title>
           <v-card-text>
             <v-alert v-if="saveError" type="error" variant="tonal" class="mb-4">{{ saveError }}</v-alert>
-            <v-alert v-if="saveSuccess" type="success" variant="tonal" class="mb-4">Poème enregistré.</v-alert>
+            <v-alert v-if="saveSuccess" type="success" variant="tonal" class="mb-4">Ressource enregistrée.</v-alert>
+            <v-select
+              v-model="selectedPoem.contentType"
+              :items="[
+                { title: 'Poème', value: 'poem' },
+                { title: 'Document PDF', value: 'document' },
+              ]"
+              label="Type de ressource"
+            />
             <v-text-field v-model="selectedPoem.title" label="Titre" />
-            <v-textarea v-model="selectedPoem.body" label="Texte" rows="12" />
+            <v-textarea
+              v-if="selectedPoem.contentType === 'poem'"
+              v-model="selectedPoem.body"
+              label="Texte"
+              rows="12"
+              required
+            />
+            <v-textarea v-model="selectedPoem.excerpt" label="Extrait (facultatif)" rows="3" clearable />
             <v-row>
               <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.collection" :items="references?.collections" label="Collection" clearable /></v-col>
               <v-col cols="12" sm="6"><v-combobox v-model="selectedPoem.form" :items="references?.forms" label="Forme" clearable /></v-col>
@@ -370,6 +391,25 @@ useSeoMeta({
             <v-btn color="primary" :loading="saving" @click="savePoem">Enregistrer</v-btn>
             <v-divider class="my-6" />
             <h3 class="text-h6 mb-3">Médias</h3>
+            <v-alert
+              v-if="selectedPoem.contentType === 'document' && !selectedPoem.media.some((item) => item.kind === 'pdf')"
+              type="warning"
+              variant="tonal"
+              class="mb-3"
+            >
+              Téléversez le PDF pour que le document soit consultable.
+            </v-alert>
+            <v-alert
+              v-else-if="selectedPoem.contentType === 'document' && !selectedPoem.media.some((item) => item.kind === 'image')"
+              type="info"
+              variant="tonal"
+              class="mb-3"
+            >
+              Ajoutez une image de couverture ou de première page pour illustrer le document dans le catalogue.
+            </v-alert>
+            <p class="text-body-2 text-medium-emphasis mb-3">
+              Pour un document PDF, téléversez le PDF et, séparément, une image de couverture ou de première page.
+            </p>
             <v-alert v-if="mediaError" type="error" variant="tonal" class="mb-3">{{ mediaError }}</v-alert>
             <v-alert v-if="mediaSuccess" type="success" variant="tonal" class="mb-3">{{ mediaSuccess }}</v-alert>
             <v-select v-model="mediaKind" :items="[
@@ -421,11 +461,29 @@ useSeoMeta({
     <p class="text-body-2 text-medium-emphasis mt-4">Connecté avec {{ user?.email }}</p>
     <v-dialog v-model="createDialog" max-width="720">
       <v-card>
-        <v-card-title>Nouveau poème</v-card-title>
+        <v-card-title>Nouvelle ressource</v-card-title>
         <v-card-text>
           <v-alert v-if="createError" type="error" variant="tonal" class="mb-4">{{ createError }}</v-alert>
+          <v-select
+            v-model="newPoem.contentType"
+            :items="[
+              { title: 'Poème', value: 'poem' },
+              { title: 'Document PDF', value: 'document' },
+            ]"
+            label="Type de ressource"
+          />
           <v-text-field v-model="newPoem.title" label="Titre" required />
-          <v-textarea v-model="newPoem.body" label="Texte" rows="12" required />
+          <v-textarea
+            v-if="newPoem.contentType === 'poem'"
+            v-model="newPoem.body"
+            label="Texte"
+            rows="12"
+            required
+          />
+          <p v-else class="text-body-2 text-medium-emphasis">
+            Après la création, téléversez le PDF et, séparément, une image de couverture ou de première page.
+          </p>
+          <v-textarea v-model="newPoem.excerpt" label="Extrait (facultatif)" rows="3" clearable />
           <v-row>
             <v-col cols="12" sm="6"><v-combobox v-model="newPoem.collection" :items="references?.collections" label="Collection" clearable /></v-col>
             <v-col cols="12" sm="6"><v-combobox v-model="newPoem.form" :items="references?.forms" label="Forme" clearable /></v-col>
@@ -440,7 +498,7 @@ useSeoMeta({
         <v-card-actions>
           <v-spacer />
           <v-btn variant="text" @click="createDialog = false">Annuler</v-btn>
-          <v-btn color="primary" :loading="creating" @click="createPoem">Créer le poème</v-btn>
+          <v-btn color="primary" :loading="creating" @click="createPoem">Créer la ressource</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

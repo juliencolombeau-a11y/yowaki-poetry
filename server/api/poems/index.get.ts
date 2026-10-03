@@ -20,6 +20,7 @@ export default defineEventHandler(async (event) => {
       ? or(
           like(schema.poems.title, `%${search}%`),
           like(schema.poems.body, `%${search}%`),
+          like(schema.poems.excerpt, `%${search}%`),
           like(schema.poems.collection, `%${search}%`),
         )
       : undefined,
@@ -51,6 +52,7 @@ export default defineEventHandler(async (event) => {
           id: schema.poems.id,
           documentOrder: schema.poems.documentOrder,
           title: schema.poems.title,
+          contentType: schema.poems.contentType,
           excerpt: schema.poems.excerpt,
           collection: schema.poems.collection,
           form: schema.poems.form,
@@ -65,6 +67,7 @@ export default defineEventHandler(async (event) => {
         id: schema.poems.id,
         documentOrder: schema.poems.documentOrder,
         title: schema.poems.title,
+        contentType: schema.poems.contentType,
         excerpt: schema.poems.excerpt,
         collection: schema.poems.collection,
         form: schema.poems.form,

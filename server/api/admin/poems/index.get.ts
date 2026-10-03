@@ -24,6 +24,7 @@ export default defineEventHandler(async (event) => {
         : or(
             like(schema.poems.title, `%${search}%`),
             like(schema.poems.body, `%${search}%`),
+            like(schema.poems.excerpt, `%${search}%`),
           )
       : undefined,
     collection ? eq(schema.poems.collection, collection) : undefined,
@@ -62,6 +63,7 @@ export default defineEventHandler(async (event) => {
         id: schema.poems.id,
         documentOrder: schema.poems.documentOrder,
         title: schema.poems.title,
+        contentType: schema.poems.contentType,
         collection: schema.poems.collection,
         form: schema.poems.form,
         isCalligram: schema.poems.isCalligram,

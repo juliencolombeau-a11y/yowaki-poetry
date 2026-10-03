@@ -3,6 +3,7 @@ interface Poem {
   id: number
   documentOrder: number
   title: string
+  contentType: 'poem' | 'document'
   excerpt: string | null
   collection: string | null
   form: string | null
@@ -137,7 +138,7 @@ useSeoMeta({
     <v-text-field
       v-model="search"
       label="Rechercher"
-      placeholder="Titre, texte ou collection"
+      placeholder="Titre, texte, extrait ou collection"
       prepend-inner-icon="mdi-magnify"
       clearable
       hide-details
@@ -215,13 +216,16 @@ useSeoMeta({
           </v-card-item>
           <v-card-text class="flex-grow-1">
             <div class="d-flex flex-wrap ga-2 mb-3">
+              <v-chip v-if="poem.contentType === 'document'" size="small" color="secondary">PDF</v-chip>
               <v-chip v-if="poem.form" size="small">{{ poem.form }}</v-chip>
               <v-chip v-if="poem.meter" size="small" variant="outlined">{{ poem.meter }}</v-chip>
             </div>
             <p class="text-body-2 text-medium-emphasis line-clamp-4 mb-0">{{ poem.excerpt }}</p>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="primary" variant="text" append-icon="mdi-arrow-right">Lire le poème</v-btn>
+            <v-btn color="primary" variant="text" append-icon="mdi-arrow-right">
+              {{ poem.contentType === 'document' ? 'Ouvrir le document' : 'Lire le poème' }}
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-col>

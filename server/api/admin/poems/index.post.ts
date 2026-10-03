@@ -20,7 +20,14 @@ export default defineEventHandler(async (event) => {
   if (!body || typeof body.title !== 'string' || !body.title.trim()) {
     throw createError({ statusCode: 422, statusMessage: 'Le titre est obligatoire.' })
   }
-  if (typeof body.body !== 'string' || !body.body.trim()) {
+  if (typeof body.body !== 'string') {
+    throw createError({ statusCode: 422, statusMessage: 'Le texte de la ressource est invalide.' })
+  }
+  const contentType = body.contentType === undefined ? 'poem' : body.contentType
+  if (contentType !== 'poem' && contentType !== 'document') {
+    throw createError({ statusCode: 422, statusMessage: 'Le type de ressource est invalide.' })
+  }
+  if (contentType === 'poem' && !body.body.trim()) {
     throw createError({ statusCode: 422, statusMessage: 'Le texte du poème est obligatoire.' })
   }
   if (body.isCalligram !== undefined && typeof body.isCalligram !== 'boolean') {
@@ -41,7 +48,7 @@ export default defineEventHandler(async (event) => {
     .values({
       documentOrder: (lastPoem?.documentOrder ?? 0) + 1,
       title: body.title.trim(),
-      body: body.body,
+      body: body.body.trim() ? body.body : '',
       excerpt: nullableText(body.excerpt),
       collection: nullableText(body.collection),
       form: nullableText(body.form),
@@ -51,7 +58,7 @@ export default defineEventHandler(async (event) => {
       creationDate: nullableText(body.creationDate),
       notes: nullableText(body.notes),
       isCalligram: body.isCalligram === true,
-      contentType: 'poem',
+      contentType,
       createdAt: now,
       updatedAt: now,
     })

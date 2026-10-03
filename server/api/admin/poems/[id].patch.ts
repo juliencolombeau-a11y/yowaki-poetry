@@ -27,9 +27,31 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 422, statusMessage: 'Données de poème invalides.' })
   }
 
+  const [existingPoem] = await db
+    .select({
+      contentType: schema.poems.contentType,
+      body: schema.poems.body,
+    })
+    .from(schema.poems)
+    .where(eq(schema.poems.id, id))
+    .limit(1)
+
+  if (!existingPoem) {
+    throw createError({ statusCode: 404, statusMessage: 'Poème introuvable.' })
+  }
+
+  const contentType = body.contentType ?? existingPoem.contentType
+  if (contentType !== 'poem' && contentType !== 'document') {
+    throw createError({ statusCode: 422, statusMessage: 'Le type de ressource est invalide.' })
+  }
+
   const languages = body.languages === undefined ? undefined : normalizePoemLanguages(body.languages)
   const values: Partial<typeof schema.poems.$inferInsert> = {
     updatedAt: new Date(),
+  }
+
+  if (body.contentType !== undefined) {
+    values.contentType = contentType
   }
 
   if (body.title !== undefined) {
@@ -40,10 +62,15 @@ export default defineEventHandler(async (event) => {
   }
 
   if (body.body !== undefined) {
-    if (typeof body.body !== 'string' || !body.body.trim()) {
+    if (typeof body.body !== 'string' || (contentType === 'poem' && !body.body.trim())) {
       throw createError({ statusCode: 422, statusMessage: 'Le texte du poème est obligatoire.' })
     }
     values.body = body.body
+  }
+  else if (contentType === 'poem') {
+    if (!existingPoem.body.trim()) {
+      throw createError({ statusCode: 422, statusMessage: 'Le texte du poème est obligatoire.' })
+    }
   }
 
   for (const field of nullableTextFields) {

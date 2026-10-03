@@ -2,6 +2,7 @@
 interface Poem {
   id: number
   documentOrder: number
+  contentType: 'poem' | 'document'
   title: string
   body: string
   excerpt: string | null
@@ -35,7 +36,7 @@ if (error.value) {
 
 useSeoMeta({
   title: () => poem.value?.title ?? 'Poème',
-  description: () => poem.value?.excerpt ?? 'Poème de Yowaki.',
+  description: () => poem.value?.excerpt ?? (poem.value?.contentType === 'document' ? 'Document PDF de Yowaki.' : 'Poème de Yowaki.'),
 })
 </script>
 
@@ -43,7 +44,7 @@ useSeoMeta({
   <main v-if="poem">
     <v-btn to="/" variant="text" prepend-icon="mdi-arrow-left" class="mb-4">Retour au catalogue</v-btn>
     <article>
-      <p class="text-overline">Poème {{ poem.documentOrder }}</p>
+      <p class="text-overline">{{ poem.contentType === 'document' ? 'Document PDF' : `Poème ${poem.documentOrder}` }}</p>
       <h1 class="text-h3 text-sm-h2 mb-3">{{ poem.title }}</h1>
       <div class="d-flex flex-wrap ga-2 mb-8">
         <v-chip v-if="poem.collection">{{ poem.collection }}</v-chip>
@@ -54,11 +55,14 @@ useSeoMeta({
         <v-chip v-for="language in poem.languages" :key="language" variant="outlined">{{ language }}</v-chip>
         <v-chip v-if="poem.isCalligram" color="secondary">Calligramme</v-chip>
       </div>
-      <v-card variant="tonal" class="poem-body mb-8">
+      <v-card v-if="poem.contentType === 'poem' && poem.body.trim()" variant="tonal" class="poem-body mb-8">
         <v-card-text>
           <div class="poem-text">{{ poem.body }}</div>
         </v-card-text>
       </v-card>
+      <p v-if="poem.excerpt && (poem.contentType === 'document' || !poem.body.trim())" class="text-body-1 mb-8">
+        {{ poem.excerpt }}
+      </p>
       <v-card v-if="poem.media.some((item) => item.kind === 'image')" variant="outlined" class="mb-8">
         <v-card-title>Illustration</v-card-title>
         <v-card-text>
@@ -85,6 +89,14 @@ useSeoMeta({
           />
         </v-card-text>
       </v-card>
+      <v-alert
+        v-if="poem.contentType === 'document' && !poem.media.some((item) => item.kind === 'pdf')"
+        type="info"
+        variant="tonal"
+        class="mb-8"
+      >
+        Le document PDF n’est pas encore disponible.
+      </v-alert>
       <v-card v-if="poem.notes" variant="outlined">
         <v-card-title>Notes</v-card-title>
         <v-card-text>{{ poem.notes }}</v-card-text>
