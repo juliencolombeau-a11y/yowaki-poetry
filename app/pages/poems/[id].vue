@@ -83,10 +83,21 @@ useSeoMeta({
           <iframe
             v-for="media in poem.media.filter((item) => item.kind === 'pdf')"
             :key="media.id"
-            :src="media.url"
+            :src="`/api/poems/${poem.id}/pdf`"
             :title="media.originalFilename || `PDF de ${poem.title}`"
             class="pdf-viewer"
           />
+          <v-btn
+            v-for="media in poem.media.filter((item) => item.kind === 'pdf')"
+            :key="`open-${media.id}`"
+            :href="`/api/poems/${poem.id}/pdf`"
+            target="_blank"
+            rel="noopener"
+            variant="text"
+            class="mt-2"
+          >
+            Ouvrir le PDF dans un nouvel onglet
+          </v-btn>
         </v-card-text>
       </v-card>
       <v-alert

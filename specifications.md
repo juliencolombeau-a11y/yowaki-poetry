@@ -13,7 +13,7 @@ Yowaki Poetry est un site web responsive permettant de consulter et d'administre
 
 Le site doit rester utilisable sans compte pour la consultation publique. Un espace d'administration protégé doit permettre à un administrateur unique de gérer les fiches, les classifications et les médias associés.
 
-Les nouvelles et autres textes longs, dont le contenu source est un PDF, sont hors du périmètre initial du catalogue de poèmes. Le modèle doit toutefois permettre leur intégration ultérieure sans refonte majeure.
+Les ressources longues dont le contenu est un PDF peuvent être publiées dans le catalogue comme type `document`, avec les métadonnées communes aux poèmes, un extrait facultatif et une illustration séparée. Les nouvelles avec corps éditorial, workflow de publication ou champs dédiés restent une évolution distincte.
 
 ## 2. Périmètre
 
@@ -25,10 +25,13 @@ Les nouvelles et autres textes longs, dont le contenu source est un PDF, sont ho
 - filtres par collection, forme, métrique, rimes, langue, thème, calligramme et type de contenu ;
 - pagination ou chargement par pages ;
 - fiche détaillée d'un poème ;
+- ressources de type document PDF, avec texte intégral et extrait facultatifs ;
 - navigation depuis une caractéristique vers les autres poèmes correspondants ;
 - affichage du texte intégral en conservant les retours à la ligne et les strophes ;
 - affichage d'une image associée lorsqu'elle existe ;
-- prise en charge d'un PDF associé comme média téléchargeable et, si possible, consultable dans le navigateur ;
+- téléversement séparé d'un PDF et de son illustration/couverture ;
+- affichage du PDF dans un lecteur intégré sur la fiche publique ;
+- suggestions de trois ressources aléatoires disposant d'une image ;
 - connexion d'un administrateur ;
 - création, modification et suppression d'une fiche ;
 - import initial contrôlé du CSV et du corpus Markdown ;
@@ -67,7 +70,7 @@ L'accueil doit présenter :
 - le nombre de résultats ;
 - des cartes contenant le titre, la collection en sous-titre lorsqu'elle existe, les tags de forme et métrique, une vignette conditionnelle et un lien vers la fiche.
 
-La recherche doit porter au minimum sur le titre, le texte intégral, la série, la langue et les thèmes. Les filtres sont combinables. Toute modification de recherche ou de filtre remet la pagination à la première page.
+La recherche porte sur le titre, le texte intégral, l'extrait et la collection. Les filtres disponibles sont combinables et comprennent notamment la collection, la forme, la langue et les calligrammes. Toute modification de recherche ou de filtre remet la pagination à la première page. Les suggestions présentent jusqu'à trois ressources illustrées dans des cartes dédiées, avec image entière et lien vers la fiche.
 
 ### 4.2 Fiche d'un poème
 
@@ -80,8 +83,10 @@ La fiche doit afficher :
 - les thèmes ;
 - l'indication de calligramme ;
 - l'image associée, avec un état explicite lorsqu'elle est absente ;
-- le texte intégral avec une mise en page lisible ;
-- le PDF associé, le cas échéant, avec téléchargement et affichage intégré si le navigateur le permet ;
+- le texte intégral avec une mise en page lisible pour un poème ;
+- l'extrait facultatif pour un document PDF sans texte intégral ;
+- l'illustration associée, si elle existe ;
+- le PDF intégré dans la fiche publique si le navigateur le permet ;
 - des liens vers les résultats partageant une caractéristique.
 
 Les URL de fiches doivent être stables et partageables. L'identifiant technique peut être utilisé dans un premier temps ; un slug pourra être ajouté ensuite si le besoin SEO ou éditorial le justifie.
@@ -96,8 +101,11 @@ L'administrateur doit pouvoir :
 - modifier tous les champs éditoriaux ;
 - téléverser, remplacer ou retirer une image ;
 - téléverser, remplacer ou retirer un PDF ;
+- choisir le type « Poème » ou « Document PDF » ; pour ce dernier, le texte et l'extrait sont facultatifs ;
+- téléverser séparément le PDF et son image de couverture ou de première page ;
 - supprimer une fiche après confirmation explicite ;
-- créer une nouvelle valeur de référence lorsqu'une classification n'existe pas encore ;
+- choisir une valeur ou en créer une à la volée pour la collection, la forme, le thème, la métrique et le schéma de rimes ;
+- choisir ou ajouter des langues, plusieurs langues pouvant être attribuées à une ressource ;
 - voir les erreurs de validation de façon compréhensible.
 - rechercher dans le titre et le texte intégral ;
 - parcourir les résultats par pages de 50 lignes ;
@@ -117,8 +125,8 @@ Champs recommandés :
 | `legacyId` | entier | Non | Identifiant historique du CSV, unique lorsqu'il existe |
 | `documentOrder` | entier | Oui | Identifiant applicatif initial dans l'ordre de `poemes.md` |
 | `title` | texte | Oui | Titre affiché |
-| `body` | texte long | Oui | Texte intégral, retours à la ligne conservés |
-| `excerpt` | texte | Non | Extrait éditorial ou généré à l'import |
+| `body` | texte long | Oui pour `poem`, vide autorisé pour `document` | Texte intégral, retours à la ligne conservés |
+| `excerpt` | texte | Non | Extrait facultatif, notamment pour les documents PDF |
 | `collection` | texte/référence | Non | Correspond à la colonne `Série`, une seule collection par texte |
 | `form` | référence | Non | Quatrains, sonnet marotique, calligramme, etc. |
 | `stanza` | référence | Non | Distiques, tercets, quatrains, etc. |
@@ -126,7 +134,7 @@ Champs recommandés :
 | `rhymeScheme` | référence | Non | Plates, croisées, embrassées, redoublées |
 | `languages` | références multiples | Oui par défaut | Français, anglais, occitan, bilingue, etc. |
 | `isCalligram` | booléen | Oui | Valeur issue du corpus, modifiable |
-| `contentType` | référence | Oui | `poem` en V1, extensible à `news` ou `short-story` |
+| `contentType` | référence | Oui | `poem` ou `document` ; les nouvelles éditoriales pourront utiliser un type distinct |
 | `date` | date | Non | Date de création, vide tant qu'elle n'est pas connue |
 | `notes` | texte long | Non | Notes éditoriales affichées publiquement et modifiables par l'administrateur |
 | `createdAt` | date | Oui | Audit |
@@ -136,7 +144,7 @@ Les termes de classification doivent être stockés de façon cohérente et norm
 
 ### 5.2 Thèmes et relations
 
-Un poème peut avoir plusieurs thèmes et plusieurs langues. Prévoir des relations `poem_themes` et `poem_languages`, plutôt que des champs texte uniques. La collection, la forme et la métrique restent mono-valuées en V1 ; un calligramme peut toutefois conserver une métrique.
+Un poème peut avoir plusieurs thèmes et plusieurs langues. Les langues sont enregistrées dans une relation `poem_languages`. La collection, la forme, le thème, la métrique et le schéma de rimes sont mono-valués et leurs champs acceptent une valeur existante ou une saisie libre. Dans l'interface actuelle, « Thème » réutilise le champ historique `stanza` ; une relation `poem_themes` distincte pourra être introduite si les thèmes deviennent multiples.
 
 ### 5.3 Entité `media`
 
@@ -174,14 +182,18 @@ L'import initial réalisé contient 494 poèmes. Le fichier `poemes.md` reste la
 
 Cloudinary reste le stockage recommandé pour les images, dans un dossier logique `poetry`, conformément au projet de référence. Les secrets Cloudinary restent exclusivement côté serveur.
 
-Pour les PDF :
+Pour les ressources de type `document` :
 
-- accepter uniquement les types MIME et tailles autorisés ; limiter les images à 10 Mo ;
-- stocker le fichier comme ressource brute ou selon la fonctionnalité Cloudinary validée lors du prototype ;
+- le titre est obligatoire ; le texte intégral et l'extrait sont facultatifs ;
+- associer au plus un PDF et une image par ressource dans la version actuelle ;
+- téléverser séparément le PDF et son illustration (couverture ou première page) ;
+- limiter chaque média à 10 Mo et vérifier le type MIME côté client et serveur ;
+- stocker les PDF comme ressources brutes et les images sur Cloudinary ;
 - ne jamais supposer qu'un PDF est une image ;
-- proposer la lecture intégrée par défaut et un téléchargement public ;
+- afficher le PDF dans un lecteur intégré sur la fiche publique ;
+- afficher l'illustration dans le catalogue, les suggestions et la fiche ;
 - tester l'affichage intégré sur les navigateurs ciblés ;
-- prévoir une vignette ou un état de remplacement si le navigateur ne peut pas afficher le document.
+- signaler dans l'administration si le PDF ou l'illustration manque ; afficher un état explicite si le PDF n'est pas encore disponible.
 
 Le formulaire doit valider le type et la taille avant l'envoi, puis la route serveur doit refaire toutes les vérifications. Une image ou un PDF absent ne doit pas empêcher la consultation de la fiche.
 
@@ -194,7 +206,7 @@ Reprendre le socle de Juno-Matos :
 - NuxtHub DB avec SQLite en local et Cloudflare D1 en production ;
 - Drizzle ORM et migrations SQL versionnées ;
 - `nuxt-auth-utils` pour les sessions chiffrées ;
-- Cloudinary pour les images dans `poetry` et l'étude du stockage PDF ;
+- Cloudinary pour les images dans `poetry` et le stockage des PDF comme ressources brutes ;
 - GitHub pour le code et le déclenchement du déploiement ;
 - Cloudflare Workers/Pages et Wrangler pour l'exécution et la mise en production ;
 - npm et `package-lock.json` pour des installations reproductibles.
@@ -300,7 +312,7 @@ Les exports `.data/` servent uniquement aux opérations locales ou d'import ponc
 - les filtres affichent des valeurs cohérentes avec les données ;
 - l'administrateur peut créer, modifier, supprimer et enrichir une fiche ;
 - une image peut être ajoutée ou remplacée sans exposer les secrets ;
-- un PDF valide peut être associé, lu intégré et téléchargé ;
+- une ressource PDF peut être créée sans texte ni extrait, illustrée séparément et consultée dans un lecteur intégré ;
 - les écritures non authentifiées sont refusées ;
 - `npx nuxt typecheck`, le build et le dry-run Wrangler réussissent ;
 - les migrations locales et D1 sont identiques et appliquées dans l'ordre ;
@@ -310,7 +322,7 @@ Les exports `.data/` servent uniquement aux opérations locales ou d'import ponc
 ## 12. Règles d'évolution
 
 - préserver `contentType = poem` pour les fiches existantes ;
-- ajouter les nouvelles comme un type de contenu distinct après validation du modèle éditorial ;
+- conserver `document` pour les ressources PDF ; ajouter les nouvelles comme type distinct après validation du modèle éditorial ;
 - ne pas rendre obligatoires pour les poèmes les champs spécifiques aux nouvelles ;
 - créer une migration SQL pour chaque évolution de schéma ;
 - préserver les anciennes URL et le `documentOrder` des poèmes ;

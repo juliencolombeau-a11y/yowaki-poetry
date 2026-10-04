@@ -1,6 +1,6 @@
 # Roadmap — Yowaki Poetry
 
-> État au 20 septembre 2026 : V1 déployée sur Cloudflare Workers, avec D1 et Cloudinary opérationnels.
+> État au 3 octobre 2026 : V1 déployée sur Cloudflare Workers, avec D1 et Cloudinary opérationnels ; le catalogue, les suggestions illustrées, l'administration des métadonnées et les ressources PDF sont en place.
 > URL actuelle : `https://yowaki-poetry.yboawhafkuil.workers.dev`
 
 Cette roadmap transforme les documents métier existants en une application déployable. Les phases doivent être réalisées dans l'ordre lorsque la phase suivante dépend du schéma ou des décisions de la précédente.
@@ -80,12 +80,13 @@ Cette roadmap transforme les documents métier existants en une application dép
 - construire la recherche textuelle ;
 - ajouter filtres combinables et pagination ;
 - créer les cartes responsive ;
+- afficher trois suggestions aléatoires parmi les ressources illustrées ;
 - créer la fiche détaillée ;
 - préserver la mise en forme des poèmes ;
 - ajouter navigation par caractéristiques ;
 - ajouter SEO de base, états vides, chargement et erreurs.
 
-**Sortie obtenue :** catalogue public déployé, avec recherche, filtres, pagination, cartes et fiches.
+**Sortie obtenue :** catalogue public déployé, avec recherche, filtres, pagination, cartes, fiches et suggestions illustrées.
 
 ## Phase 6 — Authentification et administration
 
@@ -95,10 +96,11 @@ Cette roadmap transforme les documents métier existants en une application dép
 - protéger toutes les routes d'écriture côté serveur ;
 - ajouter création, modification et suppression ;
 - ajouter création contrôlée de références ;
+- permettre le choix ou la création à la volée des valeurs de forme, métrique, schéma de rimes, thème et langue ;
 - ajouter confirmations, validations et messages d'erreur ;
 - mettre en place le bootstrap du premier administrateur.
 
-**Sortie obtenue :** authentification, création et modification protégées ; suppression de médias opérationnelle.
+**Sortie obtenue :** authentification, création et modification protégées ; valeurs éditoriales libres ou réutilisées ; langues enregistrées avec les fiches ; suppression de médias opérationnelle.
 
 ## Phase 7 — Images et PDF
 
@@ -109,10 +111,12 @@ Cette roadmap transforme les documents métier existants en une application dép
 - définir et implémenter le stockage PDF ;
 - limiter MIME, taille et extensions côté client et serveur ;
 - afficher l'image dans les cartes et fiches ;
-- afficher le PDF intégré par défaut et conserver un lien de téléchargement public ;
+- proposer une ressource de type document PDF avec les mêmes métadonnées qu'un poème et un extrait facultatif ;
+- téléverser séparément le PDF et son image de couverture/première page ;
+- afficher l'image dans le catalogue et le PDF intégré dans la fiche publique ;
 - traiter proprement l'absence ou l'échec d'un média.
 
-**Sortie obtenue :** upload, remplacement et suppression d'image/PDF, avec secrets conservés côté serveur.
+**Sortie obtenue :** upload, remplacement et suppression d'image/PDF ; ressources PDF illustrées et consultables en ligne. Le téléchargement séparé reste dépendant des possibilités du lecteur PDF.
 
 ## Phase 8 — Qualité, sécurité et accessibilité
 
@@ -156,7 +160,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 - corriger les anomalies éditoriales issues de l'import ;
 - ajouter les tests automatisés manquants et une checklist de non-régression ;
 - ajouter éventuellement des slugs, favoris ou statistiques ;
-- concevoir l'intégration des nouvelles comme `contentType` distinct ;
+- concevoir l'intégration éditoriale des nouvelles (champs propres, publication et parcours dédié) ; le type `document` existant sert aux ressources PDF sans texte ;
 - étudier une gestion plus fine des médias et des collections ;
 - préparer les champs spécifiques aux nouvelles : auteur, date, résumé, contenu long, statut de publication ;
 - décider si les nouvelles doivent partager la recherche et les filtres des poèmes ou disposer d'un espace séparé.
@@ -173,7 +177,7 @@ Cette roadmap transforme les documents métier existants en une application dép
 
 ### Évolution A — Actualités et nouvelles
 
-- ajouter un type de contenu `news` ou `short-story` sans modifier le type `poem` existant ;
+- ajouter un type de contenu `news` ou `short-story` distinct de `poem` et `document` ;
 - définir une table ou des champs dédiés pour le titre, le résumé, le corps, la date, l'image et le PDF ;
 - créer une page publique dédiée et un filtre par type de contenu ;
 - ajouter dans l'administration une vue et un formulaire adaptés aux textes longs ;

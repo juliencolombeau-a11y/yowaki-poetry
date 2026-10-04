@@ -66,7 +66,7 @@ Réponse : un identifiant doit être créé, dans l'ordre du document markdown p
 
 ### 15. Faut-il importer les éléments actuellement identifiés comme nouvelles dès la V1, ou seulement préparer le modèle ?
 
-Réponse : les nouvelles ne seront pas dans le V1 on se concentre sur les poèmes
+Réponse : les nouvelles éditoriales ne sont pas incluses ; on se concentre sur les poèmes. Les ressources longues au format PDF peuvent être ajoutées comme « Document PDF », avec les métadonnées communes, un extrait facultatif et une illustration téléversée séparément.
 
 ## Images et PDF
 
@@ -80,19 +80,21 @@ Réponse : 10Mo maximum, en HD. tu peux aussi utiliser l'import cloudinary pour 
 
 ### 18. Les PDF sont-ils des textes complets, des illustrations de calligrammes, ou les deux ?
 
-Réponse : ce peut être une illustration simple, un calligramme, ou une mise en image d'un poème
+Réponse : ce peut être une illustration simple, un calligramme, ou une mise en image d'un poème. Le PDF peut également contenir le texte complet d'une ressource longue.
 
 ### 19. Pour un PDF, faut-il privilégier la lecture intégrée, le téléchargement, ou les deux ?
 
-Réponse : lecture intégrée par défaut
+Réponse : lecture intégrée par défaut. Le lecteur intégré est en place ; un lien de téléchargement explicite pourra être ajouté si besoin.
 
 ### 20. Les PDF peuvent-ils contenir des informations confidentielles ou doivent-ils être publics comme les poèmes ?
 
-Réponse : ils peuvent êtte publics
+Réponse : ils peuvent être publics
+
+Décision complémentaire : pour une ressource PDF, le fichier et son image de couverture/première page sont téléversés séparément. L'image sert d'illustration dans le catalogue et sur la fiche.
 
 ### 21. Faut-il autoriser plusieurs images ou PDF par poème dans la première version ?
 
-Réponse : non cela viendra avec les nouvelles
+Réponse : non, une image et un PDF au maximum par ressource dans la version actuelle.
 
 ## Administration et sécurité
 
@@ -140,7 +142,7 @@ La V1 a été déployée sur Cloudflare Workers et validée avec le catalogue pu
 
 ### 31. Les nouvelles doivent-elles apparaître dans le même catalogue que les poèmes ?
 
-Réponse à décider avant l'évolution `contentType` `news` ou `short-story`.
+Réponse à décider avant d'ajouter un type éditorial `news` ou `short-story`. Le type `document` actuel concerne les ressources PDF sans texte intégral éditable.
 
 ### 32. Quels champs sont nécessaires pour une nouvelle ?
 
@@ -162,9 +164,9 @@ En l'absence de réponse explicite, la roadmap suppose :
 - un seul administrateur ;
 - un import initial du CSV et des textes Markdown ;
 - `legacyId` conservé uniquement pour la traçabilité ;
-- une image principale et un PDF principal maximum par fiche en V1 ;
+- une image principale et un PDF principal maximum par ressource ;
 - Cloudinary pour les images ;
-- téléchargement PDF obligatoire et affichage intégré tenté lorsque compatible ;
+- lecture PDF intégrée par défaut ; l'illustration de couverture est un média séparé ;
 - Nuxt 4, Vuetify, NuxtHub, D1, Drizzle, `nuxt-auth-utils` et Wrangler ;
 - les nouvelles reportées à une évolution `contentType` ultérieure, avec validation éditoriale préalable ;
 - aucune suppression automatique de média sans validation de la stratégie de nettoyage.
