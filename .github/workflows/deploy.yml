@@ -42,5 +42,8 @@ jobs:
       - name: Build for Cloudflare Workers
         run: npm run build
 
+      - name: Apply D1 migrations
+        run: npx wrangler d1 migrations apply yowaki-poetry --remote
+
       - name: Deploy Worker
         run: npx wrangler deploy

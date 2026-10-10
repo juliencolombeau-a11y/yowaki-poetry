@@ -20,6 +20,8 @@ interface AdminPoem {
   collection: string | null
   form: string | null
   isCalligram: boolean
+  ratingsEnabled: boolean
+  commentsEnabled: boolean
   updatedAt: string
 }
 
@@ -100,6 +102,9 @@ const mediaError = ref('')
 const mediaSuccess = ref('')
 const uploadingMedia = ref(false)
 const deletingMedia = ref<string | null>(null)
+const feedbackSaving = ref(false)
+const feedbackSettingsError = ref('')
+const feedbackSettingsSuccess = ref('')
 const creating = ref(false)
 const createError = ref('')
 const createDialog = ref(false)
@@ -206,6 +211,38 @@ async function savePoem() {
   }
 }
 
+async function saveFeedbackSettings() {
+  if (!selectedPoem.value || selectedId.value === null) {
+    return
+  }
+
+  feedbackSaving.value = true
+  feedbackSettingsError.value = ''
+  feedbackSettingsSuccess.value = ''
+  try {
+    const settings = await $fetch<Pick<EditablePoem, 'ratingsEnabled' | 'commentsEnabled'>>(
+      `/api/admin/poems/${selectedId.value}/feedback-settings`,
+      {
+        method: 'PATCH',
+        body: {
+          ratingsEnabled: selectedPoem.value.ratingsEnabled,
+          commentsEnabled: selectedPoem.value.commentsEnabled,
+        },
+      },
+    )
+    selectedPoem.value.ratingsEnabled = settings.ratingsEnabled
+    selectedPoem.value.commentsEnabled = settings.commentsEnabled
+    await refreshNuxtData('/api/admin/poems')
+    feedbackSettingsSuccess.value = 'Réglages des contributions enregistrés.'
+  } catch (error: unknown) {
+    feedbackSettingsError.value = error && typeof error === 'object' && 'data' in error
+      ? String((error as { data?: { statusMessage?: string } }).data?.statusMessage ?? 'Enregistrement impossible.')
+      : 'Enregistrement impossible.'
+  } finally {
+    feedbackSaving.value = false
+  }
+}
+
 async function uploadMedia() {
   if (!selectedPoem.value || !mediaFile.value) {
     return
@@ -280,6 +317,7 @@ useSeoMeta({
         <h1 class="text-h3">Bienvenue</h1>
       </div>
       <div class="d-flex flex-wrap ga-3">
+        <v-btn to="/admin/comments" variant="outlined" prepend-icon="mdi-comment-multiple-outline">Modérer les commentaires</v-btn>
         <v-btn color="primary" prepend-icon="mdi-plus" @click="openCreateDialog">Nouvelle ressource</v-btn>
         <v-btn variant="outlined" prepend-icon="mdi-logout" @click="logout">Se déconnecter</v-btn>
       </div>
@@ -389,6 +427,13 @@ useSeoMeta({
             <v-textarea v-model="selectedPoem.notes" label="Notes publiques" rows="4" clearable />
             <v-checkbox v-model="selectedPoem.isCalligram" label="Calligramme" />
             <v-btn color="primary" :loading="saving" @click="savePoem">Enregistrer</v-btn>
+            <v-divider class="my-6" />
+            <h3 class="text-h6 mb-3">Contributions publiques</h3>
+            <v-alert v-if="feedbackSettingsError" type="error" variant="tonal" class="mb-3">{{ feedbackSettingsError }}</v-alert>
+            <v-alert v-if="feedbackSettingsSuccess" type="success" variant="tonal" class="mb-3">{{ feedbackSettingsSuccess }}</v-alert>
+            <v-switch v-model="selectedPoem.ratingsEnabled" label="Activer les notes sur cette fiche" color="primary" hide-details />
+            <v-switch v-model="selectedPoem.commentsEnabled" label="Activer les commentaires sur cette fiche" color="primary" hide-details class="mb-3" />
+            <v-btn variant="outlined" :loading="feedbackSaving" @click="saveFeedbackSettings">Enregistrer les réglages</v-btn>
             <v-divider class="my-6" />
             <h3 class="text-h6 mb-3">Médias</h3>
             <v-alert

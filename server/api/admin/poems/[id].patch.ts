@@ -91,6 +91,20 @@ export default defineEventHandler(async (event) => {
     values.isCalligram = body.isCalligram
   }
 
+  if (body.ratingsEnabled !== undefined) {
+    if (typeof body.ratingsEnabled !== 'boolean') {
+      throw createError({ statusCode: 422, statusMessage: 'Le réglage des notes est invalide.' })
+    }
+    values.ratingsEnabled = body.ratingsEnabled
+  }
+
+  if (body.commentsEnabled !== undefined) {
+    if (typeof body.commentsEnabled !== 'boolean') {
+      throw createError({ statusCode: 422, statusMessage: 'Le réglage des commentaires est invalide.' })
+    }
+    values.commentsEnabled = body.commentsEnabled
+  }
+
   const [poem] = await db
     .update(schema.poems)
     .set(values)

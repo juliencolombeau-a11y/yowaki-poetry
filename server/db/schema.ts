@@ -1,4 +1,5 @@
-import { index, integer, primaryKey, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core'
+import { sql } from 'drizzle-orm'
+import { check, index, integer, primaryKey, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core'
 
 export const poems = sqliteTable(
   'poems',
@@ -18,6 +19,8 @@ export const poems = sqliteTable(
     contentType: text('content_type').notNull().default('poem'),
     creationDate: text('creation_date'),
     notes: text('notes'),
+    ratingsEnabled: integer('ratings_enabled', { mode: 'boolean' }).notNull().default(true),
+    commentsEnabled: integer('comments_enabled', { mode: 'boolean' }).notNull().default(true),
     createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
     updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
   },
@@ -29,6 +32,68 @@ export const poems = sqliteTable(
     formIndex: index('poems_form_idx').on(table.form),
     meterIndex: index('poems_meter_idx').on(table.meter),
     calligramIndex: index('poems_calligram_idx').on(table.isCalligram),
+  }),
+)
+
+export const poemRatings = sqliteTable(
+  'poem_ratings',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    poemId: integer('poem_id').notNull().references(() => poems.id, { onDelete: 'cascade' }),
+    voterTokenHash: text('voter_token_hash').notNull(),
+    value: integer('value').notNull(),
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+    updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
+  },
+  (table) => ({
+    poemVoterUnique: uniqueIndex('poem_ratings_poem_voter_unique').on(table.poemId, table.voterTokenHash),
+    valueRange: check('poem_ratings_value_range', sql`${table.value} between 1 and 5`),
+  }),
+)
+
+export const poemComments = sqliteTable(
+  'poem_comments',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    poemId: integer('poem_id').notNull().references(() => poems.id, { onDelete: 'cascade' }),
+    pseudonym: text('pseudonym').notNull(),
+    content: text('content').notNull(),
+    status: text('status', { enum: ['pending', 'approved'] }).notNull().default('pending'),
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
+    moderatedAt: integer('moderated_at', { mode: 'timestamp' }),
+  },
+  (table) => ({
+    poemStatusCreatedIndex: index('poem_comments_poem_status_created_idx').on(table.poemId, table.status, table.createdAt),
+    statusCreatedIndex: index('poem_comments_status_created_idx').on(table.status, table.createdAt),
+    pseudonymLength: check('poem_comments_pseudonym_length', sql`length(trim(${table.pseudonym})) between 1 and 50`),
+    contentLength: check('poem_comments_content_length', sql`length(trim(${table.content})) between 1 and 500`),
+    statusValues: check('poem_comments_status_values', sql`${table.status} in ('pending', 'approved')`),
+  }),
+)
+
+export const feedbackSettings = sqliteTable(
+  'feedback_settings',
+  {
+    id: integer('id').primaryKey(),
+    ratingsEnabled: integer('ratings_enabled', { mode: 'boolean' }).notNull().default(true),
+    commentsEnabled: integer('comments_enabled', { mode: 'boolean' }).notNull().default(true),
+  },
+  (table) => ({
+    singletonId: check('feedback_settings_singleton_id', sql`${table.id} = 1`),
+  }),
+)
+
+export const feedbackCommentLimits = sqliteTable(
+  'feedback_comment_limits',
+  {
+    voterTokenHash: text('voter_token_hash').primaryKey(),
+    lastCommentAt: integer('last_comment_at').notNull(),
+    dailyStart: integer('daily_start').notNull(),
+    dailyCount: integer('daily_count').notNull(),
+  },
+  (table) => ({
+    lastCommentIndex: index('feedback_comment_limits_last_comment_idx').on(table.lastCommentAt),
+    dailyCountRange: check('feedback_comment_limits_daily_count_range', sql`${table.dailyCount} between 1 and 5`),
   }),
 )
 

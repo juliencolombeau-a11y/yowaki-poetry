@@ -67,6 +67,8 @@ export default defineEventHandler(async (event) => {
         collection: schema.poems.collection,
         form: schema.poems.form,
         isCalligram: schema.poems.isCalligram,
+        ratingsEnabled: schema.poems.ratingsEnabled,
+        commentsEnabled: schema.poems.commentsEnabled,
         updatedAt: schema.poems.updatedAt,
       })
       .from(schema.poems)

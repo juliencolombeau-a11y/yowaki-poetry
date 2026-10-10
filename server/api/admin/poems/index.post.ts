@@ -33,6 +33,12 @@ export default defineEventHandler(async (event) => {
   if (body.isCalligram !== undefined && typeof body.isCalligram !== 'boolean') {
     throw createError({ statusCode: 422, statusMessage: 'Le champ calligramme est invalide.' })
   }
+  if (body.ratingsEnabled !== undefined && body.ratingsEnabled !== true) {
+    throw createError({ statusCode: 422, statusMessage: 'Les notes sont activées par défaut à la création.' })
+  }
+  if (body.commentsEnabled !== undefined && body.commentsEnabled !== true) {
+    throw createError({ statusCode: 422, statusMessage: 'Les commentaires sont activés par défaut à la création.' })
+  }
 
   const languages = body.languages === undefined ? undefined : normalizePoemLanguages(body.languages)
 
